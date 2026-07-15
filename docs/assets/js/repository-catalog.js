@@ -81,7 +81,7 @@
     }).then(function (catalog) {
       var homeCatalog = document.getElementById("repository-catalog");
       var fullCatalog = document.getElementById("full-repository-catalog");
-      var learningProgression = document.getElementById("learning-progression");
+      var learningProgression = document.getElementById("learning-progression-content");
       if (homeCatalog) { renderCatalog(homeCatalog, catalog.repositories, false); }
       if (fullCatalog) { renderCatalog(fullCatalog, catalog.repositories, true); }
       if (learningProgression) { renderLearningProgression(learningProgression, catalog.repositories, "All"); }
@@ -104,7 +104,7 @@
       document.querySelectorAll(".repository-catalog").forEach(function (target) {
         target.innerHTML = '<p class="repository-empty">The repository catalog is temporarily unavailable. Visit <a href="https://github.com/Cloud2BR-TEC">Cloud2BR TEC on GitHub</a>.</p>';
       });
-      var learningProgression = document.getElementById("learning-progression");
+      var learningProgression = document.getElementById("learning-progression-content");
       if (learningProgression) { learningProgression.innerHTML = '<p>The learning progression is temporarily unavailable.</p>'; }
     });
   }

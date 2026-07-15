@@ -29,7 +29,7 @@ The Technology Education Center of Cloud2BR brings together practical, self-pace
 
 ## Learning progression
 
-<div id="learning-progression" aria-live="polite">
+<div id="learning-progression-content" aria-live="polite">
   <p>Loading available learning paths...</p>
 </div>
 
