@@ -2,12 +2,6 @@
 
 The Technology Education Center of Cloud2BR brings together practical, self-paced learning paths for cloud, data, AI, and platform engineering. Start with a foundation, then move into implementation and production operations.
 
-<div class="hub-overview" aria-label="Cloud2BR TEC learning catalog overview">
-  <div><strong id="catalog-count">8</strong><span>learning paths</span></div>
-  <div><strong>4</strong><span>focus areas</span></div>
-  <div><strong>101-103</strong><span>learning progression</span></div>
-</div>
-
 !!! important "Choose a path that matches your next outcome"
     Start with a 101 foundation when the domain is new. Move to 102 when you are ready to build, and 103 when you need production architecture, governance, and operations practices.
 

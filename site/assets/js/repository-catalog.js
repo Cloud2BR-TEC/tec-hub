@@ -48,9 +48,6 @@
       if (homeCatalog) { renderCatalog(homeCatalog, catalog.repositories, false); }
       if (fullCatalog) { renderCatalog(fullCatalog, catalog.repositories, true); }
 
-      var count = document.getElementById("catalog-count");
-      if (count) { count.textContent = catalog.repositories.filter(function (repository) { return repository.published && !repository.current; }).length; }
-
       var searchInput = document.getElementById("catalog-search");
       var filters = document.querySelectorAll("[data-filter]");
       var activeCategory = "All";
