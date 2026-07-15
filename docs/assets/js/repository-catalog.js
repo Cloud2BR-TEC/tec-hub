@@ -47,9 +47,23 @@
     return '<tr><td>' + escapeHtml(category) + '</td><td>' + courses + '</td><td>' + escapeHtml(levels) + ' available</td></tr>';
   }
 
-  function renderLearningProgression(target, repositories) {
+  function detailedProgressionTemplate(repository) {
+    var url = repository.siteUrl || repository.repositoryUrl;
+    var linkLabel = repository.siteUrl ? "Open learning site" : "View repository";
+    return '<tr><td>' + escapeHtml(repository.level) + '</td><td><strong>' + escapeHtml(repository.title) + '</strong></td><td>' + escapeHtml(repository.description) + '</td><td><a href="' + escapeHtml(url) + '">' + linkLabel + '</a></td></tr>';
+  }
+
+  function renderLearningProgression(target, repositories, category) {
+    var published = repositories.filter(function (repository) { return repository.published; });
+    if (category !== "All") {
+      var selectedCourses = published.filter(function (repository) { return repository.category === category; }).sort(function (left, right) {
+        return Number(left.level) - Number(right.level);
+      });
+      target.innerHTML = '<h3>' + escapeHtml(category) + ' course details</h3><table><thead><tr><th>Level</th><th>Course</th><th>What is offered</th><th>Start</th></tr></thead><tbody>' + selectedCourses.map(detailedProgressionTemplate).join("") + '</tbody></table>';
+      return;
+    }
     var paths = {};
-    repositories.filter(function (repository) { return repository.published; }).forEach(function (repository) {
+    published.forEach(function (repository) {
       (paths[repository.category] = paths[repository.category] || []).push(repository);
     });
     var rows = Object.keys(paths).sort().map(function (category) {
@@ -70,7 +84,7 @@
       var learningProgression = document.getElementById("learning-progression");
       if (homeCatalog) { renderCatalog(homeCatalog, catalog.repositories, false); }
       if (fullCatalog) { renderCatalog(fullCatalog, catalog.repositories, true); }
-      if (learningProgression) { renderLearningProgression(learningProgression, catalog.repositories); }
+      if (learningProgression) { renderLearningProgression(learningProgression, catalog.repositories, "All"); }
 
       var searchInput = document.getElementById("catalog-search");
       var filters = document.querySelectorAll("[data-filter]");
@@ -82,6 +96,7 @@
             activeCategory = filter.dataset.filter;
             filters.forEach(function (item) { item.classList.toggle("is-active", item === filter); });
             updateFilteredCatalog(homeCatalog, searchInput.value, activeCategory);
+            if (learningProgression) { renderLearningProgression(learningProgression, catalog.repositories, activeCategory); }
           });
         });
       }
