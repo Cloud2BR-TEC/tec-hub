@@ -1,0 +1,110 @@
+{
+  "organization": {
+    "name": "Cloud2BR Technology Education Center",
+    "shortName": "Cloud2BR TEC",
+    "githubUrl": "https://github.com/Cloud2BR-TEC",
+    "updated": "2026-07-15"
+  },
+  "repositories": [
+    {
+      "name": "ai-academy-101-ml",
+      "title": "AI Academy 101: Machine Learning Foundations",
+      "category": "Machine Learning",
+      "level": "101",
+      "description": "Introduction to machine learning concepts, including types of ML, data preparation, model training, evaluation, and real-world AI applications.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-101-ml",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-101-ml/",
+      "published": true
+    },
+    {
+      "name": "ai-academy-102-ml",
+      "title": "AI Academy 102: Applied Machine Learning",
+      "category": "Machine Learning",
+      "level": "102",
+      "description": "Build, train, and deploy machine learning models using modern tools, platforms, and practical scenarios.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-102-ml",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-102-ml/",
+      "published": true
+    },
+    {
+      "name": "ai-academy-103-ml",
+      "title": "AI Academy 103: Production Machine Learning",
+      "category": "Machine Learning",
+      "level": "103",
+      "description": "Advanced ML concepts covering model lifecycle management, deployment, monitoring, automation, and production-ready machine learning solutions.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-103-ml",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-103-ml/",
+      "published": true
+    },
+    {
+      "name": "ai-academy-101-rag",
+      "title": "AI Academy 101: Retrieval-Augmented Generation",
+      "category": "RAG",
+      "level": "101",
+      "description": "Learn RAG fundamentals: LLM limitations, embeddings, vector databases, semantic search, chunking, prompt augmentation, and retrieval quality.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-101-rag",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-101-rag/",
+      "published": true
+    },
+    {
+      "name": "ai-academy-102-rag",
+      "title": "AI Academy 102: Build a RAG Application",
+      "category": "RAG",
+      "level": "102",
+      "description": "Build an end-to-end RAG chatbot with Azure AI services, document ingestion, indexing, retrieval, prompt orchestration, chat interfaces, and deployment.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-102-rag",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-102-rag/",
+      "published": true
+    },
+    {
+      "name": "ai-academy-103-rag",
+      "title": "AI Academy 103: Production RAG",
+      "category": "RAG",
+      "level": "103",
+      "description": "Design production-ready RAG solutions with hybrid and vector search, evaluation, security, scalability, monitoring, cost optimization, and enterprise architecture.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-103-rag",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-103-rag/",
+      "published": true
+    },
+    {
+      "name": "ai-academy-101-docs-etl",
+      "title": "AI Academy 101: Document Intelligence ETL",
+      "category": "Document Intelligence",
+      "level": "101",
+      "description": "Explore Azure document-processing approaches for invoice and layout extraction, including Document Intelligence and Open Framework pipelines.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-101-docs-etl",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-101-docs-etl/",
+      "published": true
+    },
+    {
+      "name": "ai-academy-101-ops",
+      "title": "AI Academy 101: Azure AI Operations",
+      "category": "AI Operations",
+      "level": "101",
+      "description": "Manage the lifecycle of LLM applications with Azure GenAIOps alongside traditional ML models with Azure MLOps, including evaluation, deployment, monitoring, governance, security, and improvement.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-101-ops",
+      "siteUrl": "https://cloud2br-tec.github.io/ai-academy-101-ops/",
+      "published": true
+    },
+    {
+      "name": ".github",
+      "title": "Cloud2BR TEC Organization Profile",
+      "category": "Organization",
+      "level": "Resource",
+      "description": "The public profile repository for Cloud2BR TEC, including its mission, focus areas, learning experience, and community resources.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/.github",
+      "published": false
+    },
+    {
+      "name": "tec-hub",
+      "title": "Cloud2BR TEC Hub",
+      "category": "Organization",
+      "level": "Hub",
+      "description": "The public catalog for Cloud2BR TEC learning paths and practical technology resources.",
+      "repositoryUrl": "https://github.com/Cloud2BR-TEC/tec-hub",
+      "siteUrl": "https://cloud2br-tec.github.io/tec-hub/",
+      "published": true,
+      "current": true
+    }
+  ]
+}
