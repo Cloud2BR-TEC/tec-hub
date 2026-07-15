@@ -29,12 +29,9 @@ The Technology Education Center of Cloud2BR brings together practical, self-pace
 
 ## Learning progression
 
-| Learning path | Available courses | Current progression |
-| --- | --- | --- |
-| Machine Learning | [101: Foundations](https://cloud2br-tec.github.io/ai-academy-101-ml/) -> [102: Applied ML](https://cloud2br-tec.github.io/ai-academy-102-ml/) -> [103: Production ML](https://cloud2br-tec.github.io/ai-academy-103-ml/) | Foundations -> build and deploy -> production operations |
-| Retrieval-Augmented Generation | [101: RAG Fundamentals](https://cloud2br-tec.github.io/ai-academy-101-rag/) -> [102: Build a RAG Application](https://cloud2br-tec.github.io/ai-academy-102-rag/) -> [103: Production RAG](https://cloud2br-tec.github.io/ai-academy-103-rag/) | Fundamentals -> implementation -> enterprise-ready RAG |
-| Document Intelligence | [101: Document Intelligence ETL](https://cloud2br-tec.github.io/ai-academy-101-docs-etl/) | Foundation course currently available |
-| AI Operations | [101: Azure AI Operations](https://cloud2br-tec.github.io/ai-academy-101-ops/) | Foundation course currently available |
+<div id="learning-progression" aria-live="polite">
+  <p>Loading available learning paths...</p>
+</div>
 
 ??? info "Catalog maintenance"
-    The repository catalog is sourced from `repos-map.yml`. Update that map when a public repository is added, renamed, retired, or receives a GitHub Pages site.
+    The repository catalog and learning progression are sourced from `repos-map.yml`. Update that map when a public repository is added, renamed, retired, or receives a GitHub Pages site.
