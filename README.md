@@ -1,15 +1,17 @@
 # Cloud2BR TEC Hub
 
-> A GitHub Pages catalog for the public learning paths and practical technology resources published by the [Cloud2BR Technology Education Center](https://github.com/Cloud2BR-TEC).
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[Cloud2BR TEC](https://github.com/Cloud2BR-TEC)
 
-## Catalog source
+Last updated: 2026-07-14
 
-[`docs/repos-map.yml`](docs/repos-map.yml) is the catalog source of truth. It lists all public repositories in the organization and supplies the metadata rendered on the hub.
+----------
 
-## Local preview
+> Is the catalog source of truth. It lists all public repositories in the organization and supplies the metadata rendered on the hub.
 
-```powershell
-mkdocs serve
-```
-
-The site is published through GitHub Pages when changes are pushed to `main`.
+<!-- START BADGE -->
+<div align="center">
+  <img src="https://img.shields.io/badge/Total%20views-1589-limegreen" alt="Total views">
+  <p>Refresh Date: 2026-07-13</p>
+</div>
+<!-- END BADGE -->
