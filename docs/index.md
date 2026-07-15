@@ -29,11 +29,12 @@ The Technology Education Center of Cloud2BR brings together practical, self-pace
 
 ## Learning progression
 
-| Level | Goal | Typical outcome |
+| Learning path | Available courses | Current progression |
 | --- | --- | --- |
-| 101 | Understand core concepts and vocabulary | You can explain the domain and identify an appropriate use case |
-| 102 | Build an end-to-end solution | You can implement, test, and deploy a working application or model workflow |
-| 103 | Design for production | You can evaluate tradeoffs across reliability, security, governance, scale, and cost |
+| Machine Learning | [101: Foundations](https://cloud2br-tec.github.io/ai-academy-101-ml/) -> [102: Applied ML](https://cloud2br-tec.github.io/ai-academy-102-ml/) -> [103: Production ML](https://cloud2br-tec.github.io/ai-academy-103-ml/) | Foundations -> build and deploy -> production operations |
+| Retrieval-Augmented Generation | [101: RAG Fundamentals](https://cloud2br-tec.github.io/ai-academy-101-rag/) -> [102: Build a RAG Application](https://cloud2br-tec.github.io/ai-academy-102-rag/) -> [103: Production RAG](https://cloud2br-tec.github.io/ai-academy-103-rag/) | Fundamentals -> implementation -> enterprise-ready RAG |
+| Document Intelligence | [101: Document Intelligence ETL](https://cloud2br-tec.github.io/ai-academy-101-docs-etl/) | Foundation course currently available |
+| AI Operations | [101: Azure AI Operations](https://cloud2br-tec.github.io/ai-academy-101-ops/) | Foundation course currently available |
 
 ??? info "Catalog maintenance"
     The repository catalog is sourced from `repos-map.yml`. Update that map when a public repository is added, renamed, retired, or receives a GitHub Pages site.
