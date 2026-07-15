@@ -85,26 +85,6 @@
       "repositoryUrl": "https://github.com/Cloud2BR-TEC/ai-academy-101-ops",
       "siteUrl": "https://cloud2br-tec.github.io/ai-academy-101-ops/",
       "published": true
-    },
-    {
-      "name": ".github",
-      "title": "Cloud2BR TEC Organization Profile",
-      "category": "Organization",
-      "level": "Resource",
-      "description": "The public profile repository for Cloud2BR TEC, including its mission, focus areas, learning experience, and community resources.",
-      "repositoryUrl": "https://github.com/Cloud2BR-TEC/.github",
-      "published": false
-    },
-    {
-      "name": "tec-hub",
-      "title": "Cloud2BR TEC Hub",
-      "category": "Organization",
-      "level": "Hub",
-      "description": "The public catalog for Cloud2BR TEC learning paths and practical technology resources.",
-      "repositoryUrl": "https://github.com/Cloud2BR-TEC/tec-hub",
-      "siteUrl": "https://cloud2br-tec.github.io/tec-hub/",
-      "published": true,
-      "current": true
     }
   ]
 }

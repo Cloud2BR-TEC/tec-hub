@@ -1,6 +1,6 @@
-# Full Repository Catalog
+# AI Academy Catalog
 
-This page gives an operational view of all public Cloud2BR TEC repositories, including learning sites, organization resources, and this hub. The home page focuses on published learning paths; this catalog preserves the complete public map.
+This page lists the eight public Cloud2BR TEC AI Academy repositories. Each repository is a learning path, progressing from foundations through practical implementation and production operations.
 
 <div id="full-repository-catalog" class="repository-catalog repository-catalog--full" aria-live="polite"></div>
 
