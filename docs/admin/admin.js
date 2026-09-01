@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v15";
+const STORAGE_KEY = "cloud2br-program-pdf-v16";
 
 const courseCatalog = {
   "https://cloud2br-tec.github.io/ai-academy-101-ml/": {
@@ -643,6 +643,11 @@ const resetButton = document.querySelector("#reset-button");
 const refreshCommunicationButton = document.querySelector("#refresh-communication");
 const copyEmailButton = document.querySelector("#copy-email");
 const copyMessageButton = document.querySelector("#copy-message");
+const programTab = document.querySelector("#program-tab");
+const communicationTab = document.querySelector("#communication-tab");
+const backToProgramButton = document.querySelector("#back-to-program");
+const languageButtons = [...document.querySelectorAll(".language-option")];
+const workspace = document.querySelector(".workspace");
 const draftFile = document.querySelector("#draft-file");
 const status = document.querySelector("#status");
 
@@ -681,6 +686,7 @@ function spanishProgram(baseKey, copy) {
   const crcPrice = Math.round(parsePrice(base.price) * 520 / 1000) * 1000;
   return {
     ...base,
+    sourceTemplate: baseKey,
     language: "ES",
     documentType: "Programa de formación",
     kicker: "Programa tecnológico guiado",
@@ -816,7 +822,7 @@ function communicationCopy(values) {
     : values.duration.toLowerCase();
   const durationAdjective = values.duration === "Two weeks" ? "two-week" : "one-week";
   const capacity = `${values.minCapacity}–${values.maxCapacity}`;
-  const investment = `${values.currency} ${values.price}`;
+  const investment = `${values.currency} ${formatPrice(parsePrice(values.price), values.currency)}`;
   const perPerson = perPersonRange(values);
 
   if (spanish) {
@@ -837,7 +843,16 @@ function communicationCopy(values) {
 function refreshCommunication(announce = true) {
   const values = formValues();
   setFormValues(communicationCopy(values));
+  resizeCommunicationFields();
   if (announce) status.textContent = values.language === "ES" ? "Plantillas de comunicación actualizadas." : "Communication templates refreshed.";
+}
+
+function resizeCommunicationFields() {
+  ["emailSubject", "emailBody", "messageBody"].forEach((name) => {
+    const field = form.elements.namedItem(name);
+    field.style.height = "auto";
+    field.style.height = `${field.scrollHeight + 2}px`;
+  });
 }
 
 async function copyCommunication(fieldNames, successMessage) {
@@ -874,6 +889,117 @@ function setLocalizedLabels(language) {
   Object.entries(labels).forEach(([id, label]) => setText(id, label));
 }
 
+function setInterfaceLanguage(language) {
+  const spanish = language === "ES";
+  const copy = spanish ? {
+    programTab: "Programa",
+    communicationTab: "Comunicación",
+    eyebrow: "Configuración del documento",
+    editorTitle: "Detalles del programa",
+    load: "Cargar borrador",
+    save: "Guardar borrador",
+    reset: "Restablecer",
+    legends: ["Plantilla", "Programa", "Alcance y resultados", "Detalles comerciales"],
+    fields: {
+      template: "Plantilla del programa",
+      programTitle: "Título del programa",
+      preparedFor: "Preparado para",
+      preparedBy: "Organización principal",
+      overview: "Descripción general",
+      delivery: "Modalidad",
+      duration: "Duración",
+      audience: "Audiencia",
+      minCapacity: "Capacidad mínima",
+      maxCapacity: "Capacidad máxima",
+      modules: "Módulos del programa, uno por línea",
+      outcomes: "Resultados de aprendizaje, uno por línea",
+      sourceRefs: "Cursos diarios: día | curso | enfoque | duración | página",
+      price: "Precio",
+      currency: "Moneda",
+      contact: "Contacto",
+      terms: "Términos comerciales",
+      emailSubject: "Asunto del correo",
+      emailBody: "Cuerpo del correo",
+      messageBody: "Mensaje breve · Teams, LinkedIn, WhatsApp o SMS"
+    },
+    outreachEyebrow: "Comunicación multicanal",
+    outreachTitle: "Plantillas de comunicación",
+    back: "Volver al programa",
+    refresh: "Actualizar desde el programa",
+    copyEmail: "Copiar correo",
+    copyMessage: "Copiar mensaje",
+    previewEyebrow: "Vista previa A4",
+    previewTitle: "Programa de una página",
+    download: "Descargar PDF"
+  } : {
+    programTab: "Program",
+    communicationTab: "Outreach",
+    eyebrow: "Document setup",
+    editorTitle: "Program details",
+    load: "Load draft",
+    save: "Save draft",
+    reset: "Reset",
+    legends: ["Template", "Program", "Scope and outcomes", "Commercial details"],
+    fields: {
+      template: "Program template",
+      programTitle: "Program title",
+      preparedFor: "Prepared for",
+      preparedBy: "Parent organization",
+      overview: "Overview",
+      delivery: "Delivery format",
+      duration: "Duration",
+      audience: "Audience",
+      minCapacity: "Minimum capacity",
+      maxCapacity: "Maximum capacity",
+      modules: "Program modules, one per line",
+      outcomes: "Learning outcomes, one per line",
+      sourceRefs: "Daily courses: day | course | focus | length | course page",
+      price: "Price",
+      currency: "Currency",
+      contact: "Contact",
+      terms: "Commercial terms",
+      emailSubject: "Email subject",
+      emailBody: "Email body",
+      messageBody: "Short message · Teams, LinkedIn, WhatsApp, or SMS"
+    },
+    outreachEyebrow: "Multi-channel outreach",
+    outreachTitle: "Communication templates",
+    back: "Back to program",
+    refresh: "Refresh from program",
+    copyEmail: "Copy email",
+    copyMessage: "Copy message",
+    previewEyebrow: "A4 preview",
+    previewTitle: "One-page program",
+    download: "Download PDF"
+  };
+
+  programTab.textContent = copy.programTab;
+  communicationTab.textContent = copy.communicationTab;
+  document.querySelector(".program-panel .eyebrow").textContent = copy.eyebrow;
+  document.querySelector("#editor-title").textContent = copy.editorTitle;
+  loadButton.textContent = copy.load;
+  saveButton.textContent = copy.save;
+  resetButton.textContent = copy.reset;
+  document.querySelectorAll("fieldset.program-panel legend").forEach((legend, index) => { legend.textContent = copy.legends[index]; });
+  Object.entries(copy.fields).forEach(([name, label]) => {
+    const field = form.elements.namedItem(name);
+    const fieldLabel = field?.closest("label")?.querySelector("span");
+    if (fieldLabel) fieldLabel.textContent = label;
+  });
+  document.querySelector(".communication-panel-heading .eyebrow").textContent = copy.outreachEyebrow;
+  document.querySelector("#communication-title").textContent = copy.outreachTitle;
+  document.querySelector(".communication-panel legend").textContent = copy.outreachTitle;
+  backToProgramButton.textContent = copy.back;
+  refreshCommunicationButton.textContent = copy.refresh;
+  copyEmailButton.textContent = copy.copyEmail;
+  copyMessageButton.textContent = copy.copyMessage;
+  document.querySelector(".preview-toolbar .eyebrow").textContent = copy.previewEyebrow;
+  document.querySelector("#preview-title").textContent = copy.previewTitle;
+  generateButton.textContent = copy.download;
+  form.elements.namedItem("duration").options[0].textContent = spanish ? "Una semana" : "One week";
+  form.elements.namedItem("duration").options[1].textContent = spanish ? "Dos semanas" : "Two weeks";
+}
+
 function updateTemplateSummary(template) {
   const hours = scheduledHours(template.sourceRefs);
   const values = {
@@ -887,20 +1013,51 @@ function updateTemplateSummary(template) {
   setText("template-summary-language", spanish ? "Español" : "English");
   setText("template-summary-duration", `${spanish ? (template.duration === "Two weeks" ? "2 semanas" : "1 semana") : template.duration} · ${formatHours(hours, template.language)}`);
   setText("template-summary-capacity", `${template.minCapacity}–${template.maxCapacity} ${spanish ? "participantes" : "learners"}`);
-  setText("template-summary-price", `${spanish ? "Programa" : "Program"}: ${template.currency} ${template.price}`);
+  setText("template-summary-price", `${spanish ? "Programa" : "Program"}: ${template.currency} ${formatPrice(parsePrice(template.price), template.currency)}`);
   setText("template-summary-person", `${perPersonRange(values)} ${spanish ? "por persona" : "per person"}`);
   setText("template-summary-description", template.overview);
 }
 
-function decorateTemplateOptions() {
+function updateTemplateOptions(language) {
   [...templateSelect.options].forEach((option) => {
     const template = templates[option.value];
     if (!template) return;
-    const hours = scheduledHours(template.sourceRefs);
-    const language = template.language;
-    const weeks = template.duration === "Two weeks" ? 2 : 1;
-    option.textContent = `[${language} · ${weeks}${language === "ES" ? " sem" : " wk"} · ${formatHours(hours, language)} · ${template.currency} ${template.price}] ${template.programTitle}`;
+    const visible = template.language === language;
+    option.hidden = !visible;
+    option.disabled = !visible;
+    option.textContent = template.programTitle;
   });
+  [...templateSelect.querySelectorAll("optgroup")].forEach((group) => {
+    group.hidden = ![...group.querySelectorAll("option")].some((option) => !option.hidden);
+  });
+  languageButtons.forEach((button) => {
+    const active = button.dataset.language === language;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  setInterfaceLanguage(language);
+}
+
+function setView(view) {
+  const communication = view === "communication";
+  workspace.dataset.view = view;
+  document.querySelectorAll(".program-panel").forEach((panel) => { panel.hidden = communication; });
+  document.querySelector(".communication-panel-heading").hidden = !communication;
+  document.querySelector(".communication-panel").hidden = !communication;
+  programTab.classList.toggle("is-active", !communication);
+  communicationTab.classList.toggle("is-active", communication);
+  programTab.setAttribute("aria-selected", String(!communication));
+  communicationTab.setAttribute("aria-selected", String(communication));
+  if (communication) refreshCommunication(false);
+}
+
+function switchLanguage(language) {
+  const current = templates[templateSelect.value];
+  const translatedKey = language === "ES"
+    ? Object.keys(templates).find((key) => templates[key].sourceTemplate === templateSelect.value)
+    : current?.sourceTemplate;
+  updateTemplateOptions(language);
+  applyTemplate(translatedKey || (language === "ES" ? "es-cloud2br-tec" : "cloud2br-tec"));
 }
 
 function validateCourseCount(values) {
@@ -1016,7 +1173,7 @@ function updatePreview() {
   setList("preview-modules", values.modules);
   setList("preview-outcomes", values.outcomes);
   setReferences(values.sourceRefs, values.language);
-  setText("preview-price", values.price);
+  setText("preview-price", formatPrice(parsePrice(values.price), values.currency));
   setText("preview-currency", values.currency);
   setText("preview-per-person", `${perPersonRange(values)} ${values.language === "ES" ? "por persona" : "per person"}`);
   setText("preview-contact", values.contact);
@@ -1026,7 +1183,9 @@ function updatePreview() {
 
 function applyTemplate(templateName) {
   const values = { ...templates[templateName], template: templateName };
+  updateTemplateOptions(values.language);
   setFormValues({ ...values, ...communicationCopy(values) });
+  resizeCommunicationFields();
   updatePreview();
 }
 
@@ -1034,6 +1193,7 @@ function restoreState() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (saved && templates[saved.template]) {
+      updateTemplateOptions(templates[saved.template].language);
       setFormValues(saved);
       updatePreview();
       return;
@@ -1116,6 +1276,7 @@ async function generatePdf() {
 }
 
 form.addEventListener("input", (event) => {
+  if (["emailSubject", "emailBody", "messageBody"].includes(event.target.name)) resizeCommunicationFields();
   if (event.target === form.elements.namedItem("duration")) {
     const values = formValues();
     form.elements.namedItem("sourceRefs").value = buildCourseSchedule(
@@ -1128,6 +1289,10 @@ form.addEventListener("input", (event) => {
   updatePreview();
 });
 templateSelect.addEventListener("change", () => applyTemplate(templateSelect.value));
+programTab.addEventListener("click", () => setView("program"));
+communicationTab.addEventListener("click", () => setView("communication"));
+backToProgramButton.addEventListener("click", () => setView("program"));
+languageButtons.forEach((button) => button.addEventListener("click", () => switchLanguage(button.dataset.language)));
 loadButton.addEventListener("click", () => draftFile.click());
 saveButton.addEventListener("click", downloadDraft);
 refreshCommunicationButton.addEventListener("click", () => refreshCommunication());
@@ -1149,5 +1314,4 @@ resetButton.addEventListener("click", () => {
 });
 generateButton.addEventListener("click", generatePdf);
 
-decorateTemplateOptions();
 restoreState();

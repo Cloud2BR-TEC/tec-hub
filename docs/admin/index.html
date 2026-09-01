@@ -16,12 +16,18 @@
         <img src="../assets/img/org-logo.png" alt="">
         <span>Cloud2BR TEC Hub</span>
       </a>
-      <span class="app-name">Program PDF Studio</span>
+      <div class="header-tools">
+        <nav class="view-tabs" aria-label="Workspace views" role="tablist">
+          <button class="view-tab is-active" id="program-tab" type="button" role="tab" aria-selected="true" aria-controls="program-form">Program</button>
+          <button class="view-tab" id="communication-tab" type="button" role="tab" aria-selected="false" aria-controls="communication-panel">Outreach</button>
+        </nav>
+        <span class="app-name">Program PDF Studio</span>
+      </div>
     </header>
 
-    <main class="workspace">
+    <main class="workspace" data-view="program">
       <section class="editor" aria-labelledby="editor-title">
-        <div class="editor-heading">
+        <div class="editor-heading program-panel">
           <div>
             <p class="eyebrow">Document setup</p>
             <h1 id="editor-title">Program details</h1>
@@ -35,8 +41,12 @@
         </div>
 
         <form id="program-form">
-          <fieldset>
+          <fieldset class="program-panel">
             <legend>Template</legend>
+            <div class="language-control" role="group" aria-label="Program language">
+              <button class="language-option is-active" id="language-en" type="button" data-language="EN" aria-pressed="true">English</button>
+              <button class="language-option" id="language-es" type="button" data-language="ES" aria-pressed="false">Español</button>
+            </div>
             <label class="field field-full">
               <span>Program template</span>
               <select id="template" name="template">
@@ -73,7 +83,7 @@
                   <option value="msft-cloud-architecture">Cloud Architecture and Capacity</option>
                   <option value="msft-ai-platform">Azure AI Platform Foundations</option>
                 </optgroup>
-                <optgroup label="Programas en español · CRC">
+                <optgroup label="Programas disponibles">
                   <option value="es-cloud2br-tec">Ruta completa de Machine Learning</option>
                   <option value="es-tec-rag-builder">Ruta completa de RAG</option>
                   <option value="es-microsoft-learning">Ruta de Microsoft Fabric</option>
@@ -96,7 +106,7 @@
             </section>
           </fieldset>
 
-          <fieldset class="field-grid">
+          <fieldset class="field-grid program-panel">
             <legend>Program</legend>
             <label class="field field-full">
               <span>Program title</span>
@@ -124,8 +134,8 @@
             <label class="field">
               <span>Duration</span>
               <select id="duration" name="duration" required>
-                <option>One week</option>
-                <option>Two weeks</option>
+                <option value="One week">One week</option>
+                <option value="Two weeks">Two weeks</option>
               </select>
               <small class="field-detail" id="scheduled-hours"></small>
             </label>
@@ -143,7 +153,7 @@
             </label>
           </fieldset>
 
-          <fieldset class="field-grid">
+          <fieldset class="field-grid program-panel">
             <legend>Scope and outcomes</legend>
             <label class="field field-full">
               <span>Program modules, one per line</span>
@@ -159,7 +169,7 @@
             </label>
           </fieldset>
 
-          <fieldset class="field-grid">
+          <fieldset class="field-grid program-panel">
             <legend>Commercial details</legend>
             <label class="field">
               <span>Price</span>
@@ -182,7 +192,15 @@
             </label>
           </fieldset>
 
-          <fieldset class="field-grid">
+          <div class="editor-heading communication-panel-heading" hidden>
+            <div>
+              <p class="eyebrow">Multi-channel outreach</p>
+              <h1 id="communication-title">Communication templates</h1>
+            </div>
+            <button class="button button-secondary" id="back-to-program" type="button">Back to program</button>
+          </div>
+
+          <fieldset class="field-grid communication-panel" id="communication-panel" hidden>
             <legend>Communication templates</legend>
             <div class="communication-actions field-full">
               <button class="button button-secondary" id="refresh-communication" type="button">Refresh from program</button>
@@ -191,7 +209,7 @@
             </div>
             <label class="field field-full">
               <span>Email subject</span>
-              <input id="email-subject" name="emailSubject" maxlength="140" required>
+              <textarea id="email-subject" name="emailSubject" maxlength="140" rows="2" required></textarea>
             </label>
             <label class="field field-full">
               <span>Email body</span>
@@ -203,6 +221,7 @@
             </label>
           </fieldset>
         </form>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
       </section>
 
       <section class="preview-area" aria-labelledby="preview-title">
@@ -278,7 +297,6 @@
             </footer>
           </article>
         </div>
-        <p class="status" id="status" role="status" aria-live="polite"></p>
       </section>
     </main>
   </body>
