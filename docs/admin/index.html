@@ -76,8 +76,8 @@
               <input id="prepared-for" name="preparedFor" maxlength="45" required>
             </label>
             <label class="field">
-              <span>Prepared by</span>
-              <input id="prepared-by" name="preparedBy" maxlength="45" required>
+              <span>Parent organization</span>
+              <input id="prepared-by" name="preparedBy" value="Cloud2BR" maxlength="45" readonly required>
             </label>
             <label class="field field-full">
               <span>Overview</span>
@@ -95,6 +95,7 @@
                 <option>One week</option>
                 <option>Two weeks</option>
               </select>
+              <small class="field-detail" id="scheduled-hours"></small>
             </label>
             <label class="field">
               <span>Audience</span>
@@ -162,7 +163,7 @@
               <div class="document-brand">
                 <img src="../assets/img/org-logo.png" alt="Cloud2BR TEC">
                 <div>
-                  <strong id="preview-brand">Cloud2BR TEC</strong>
+                  <strong id="preview-brand">Cloud2BR</strong>
                   <span id="preview-document-type">Training program</span>
                 </div>
               </div>

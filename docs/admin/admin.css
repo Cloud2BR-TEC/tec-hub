@@ -79,6 +79,7 @@ legend { padding: 0 10px 0 0; color: var(--navy); font-size: 0.78rem; font-weigh
 .field { display: grid; align-content: start; gap: 6px; }
 .field-full { grid-column: 1 / -1; }
 .field > span { color: #40536a; font-size: 0.72rem; font-weight: 700; }
+.field-detail { color: var(--teal); font-size: 0.68rem; font-weight: 800; }
 
 input,
 select,

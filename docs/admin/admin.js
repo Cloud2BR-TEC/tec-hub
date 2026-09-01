@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v9";
+const STORAGE_KEY = "cloud2br-program-pdf-v10";
 
 const courseCatalog = {
   "https://cloud2br-tec.github.io/ai-academy-101-ml/": {
@@ -366,7 +366,8 @@ Object.assign(templates, {
 
 Object.values(templates).forEach((template) => {
   const topics = template.modules.split("\n").map((topic) => topic.trim()).filter(Boolean);
-  template.documentType = "Repository course series";
+  template.documentType = template.brand === "Cloud2BR-TEC" ? "Training program" : "Learning program";
+  template.preparedBy = "Cloud2BR";
   template.overview = `A curated set of repository-backed courses covering ${topics.join(", ")}.`;
   template.delivery = "Live Teams · 1–2 hours by session";
   template.sourceRefs = buildCourseSchedule(template.sourceRefs, template.modules, template.outcomes, template.duration);
@@ -450,7 +451,21 @@ function setFormValues(values) {
 }
 
 function formValues() {
-  return Object.fromEntries(new FormData(form).entries());
+  const values = Object.fromEntries(new FormData(form).entries());
+  values.preparedBy = "Cloud2BR";
+  form.elements.namedItem("preparedBy").value = values.preparedBy;
+  return values;
+}
+
+function scheduledHours(value) {
+  return value.split("\n").reduce((total, item) => {
+    const sessionLength = item.split("|").map((part) => part.trim()).find((part) => /^\d+(\.\d+)? hours?$/.test(part));
+    return total + (sessionLength ? Number.parseFloat(sessionLength) : 0);
+  }, 0);
+}
+
+function formatHours(hours) {
+  return `${Number.isInteger(hours) ? hours : hours.toFixed(1)} live hours`;
 }
 
 function validateCourseCount(values) {
@@ -528,15 +543,17 @@ function updatePreview() {
   const values = formValues();
   validateCourseCount(values);
   const selectedTemplate = templates[values.template];
-  setText("preview-brand", selectedTemplate.brand);
-  setText("preview-document-type", selectedTemplate.documentType);
+  const totalHours = scheduledHours(values.sourceRefs || "");
+  setText("scheduled-hours", totalHours ? formatHours(totalHours) : "Hours calculated from sessions");
+  setText("preview-brand", "Cloud2BR");
+  setText("preview-document-type", `${selectedTemplate.documentType} · ${selectedTemplate.brand}`);
   setText("preview-kicker", selectedTemplate.kicker);
   setText("preview-title-value", values.programTitle);
   setText("preview-prepared-for", values.preparedFor);
   setText("preview-prepared-by", values.preparedBy);
   setText("preview-overview", values.overview);
   setText("preview-delivery", values.delivery);
-  setText("preview-duration", values.duration);
+  setText("preview-duration", totalHours ? `${values.duration} · ${formatHours(totalHours)}` : values.duration);
   setText("preview-audience", values.audience);
   setText("preview-cohort-size", values.cohortSize);
   setList("preview-modules", values.modules);
