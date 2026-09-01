@@ -73,8 +73,27 @@
                   <option value="msft-cloud-architecture">Cloud Architecture and Capacity</option>
                   <option value="msft-ai-platform">Azure AI Platform Foundations</option>
                 </optgroup>
+                <optgroup label="Programas en español · CRC">
+                  <option value="es-cloud2br-tec">Ruta completa de Machine Learning</option>
+                  <option value="es-tec-rag-builder">Ruta completa de RAG</option>
+                  <option value="es-microsoft-learning">Ruta de Microsoft Fabric</option>
+                  <option value="es-msft-security-operations">Operaciones de seguridad Microsoft</option>
+                  <option value="es-msft-agent-mcp">Agentes de Azure y MCP</option>
+                  <option value="es-msft-document-automation">Automatización documental</option>
+                </optgroup>
               </select>
             </label>
+            <section class="template-summary" id="template-summary" aria-live="polite">
+              <strong id="template-summary-title"></strong>
+              <div class="template-summary-meta">
+                <span id="template-summary-language"></span>
+                <span id="template-summary-duration"></span>
+                <span id="template-summary-capacity"></span>
+                <span id="template-summary-price"></span>
+                <span id="template-summary-person"></span>
+              </div>
+              <p id="template-summary-description"></p>
+            </section>
           </fieldset>
 
           <fieldset class="field-grid">
@@ -99,6 +118,7 @@
               <span>Delivery format</span>
               <select id="delivery" name="delivery" required>
                 <option>Live Teams · 1–2 hours by session</option>
+                <option>Teams en vivo · 1–2 horas por sesión</option>
               </select>
             </label>
             <label class="field">
@@ -109,13 +129,17 @@
               </select>
               <small class="field-detail" id="scheduled-hours"></small>
             </label>
-            <label class="field">
+            <label class="field field-full">
               <span>Audience</span>
               <input id="audience" name="audience" maxlength="55" required>
             </label>
             <label class="field">
-              <span>Cohort size</span>
-              <input id="cohort-size" name="cohortSize" maxlength="25" required>
+              <span>Minimum capacity</span>
+              <input id="minimum-capacity" name="minCapacity" type="number" min="1" max="100" required>
+            </label>
+            <label class="field">
+              <span>Maximum capacity</span>
+              <input id="maximum-capacity" name="maxCapacity" type="number" min="1" max="100" required>
             </label>
           </fieldset>
 
@@ -180,7 +204,7 @@
                 </div>
               </div>
               <div class="document-meta">
-                <span>Prepared for</span>
+                <span id="preview-prepared-for-label">Prepared for</span>
                 <strong id="preview-prepared-for"></strong>
               </div>
             </header>
@@ -194,32 +218,33 @@
             </section>
 
             <section class="document-facts" aria-label="Program summary">
-              <div><span>Delivery</span><strong id="preview-delivery"></strong></div>
-              <div><span>Duration</span><strong id="preview-duration"></strong></div>
-              <div><span>Audience</span><strong id="preview-audience"></strong></div>
-              <div><span>Cohort</span><strong id="preview-cohort-size"></strong></div>
+              <div><span id="preview-delivery-label">Delivery</span><strong id="preview-delivery"></strong></div>
+              <div><span id="preview-duration-label">Duration</span><strong id="preview-duration"></strong></div>
+              <div><span id="preview-audience-label">Audience</span><strong id="preview-audience"></strong></div>
+              <div><span id="preview-cohort-label">Cohort</span><strong id="preview-cohort-size"></strong></div>
             </section>
 
             <div class="document-columns">
               <section>
-                <h4>Course focus</h4>
+                <h4 id="preview-focus-label">Course focus</h4>
                 <ol id="preview-modules"></ol>
               </section>
               <section>
-                <h4>Learning takeaways</h4>
+                <h4 id="preview-outcomes-label">Learning takeaways</h4>
                 <ul id="preview-outcomes"></ul>
               </section>
             </div>
 
             <section class="document-path">
-              <strong>Learning program flow</strong>
+              <strong id="preview-flow-label">Learning program flow</strong>
               <div id="preview-source-refs"></div>
             </section>
 
             <section class="commercial-band">
               <div class="price-block">
-                <span>Cohort investment</span>
+                <span id="preview-investment-label">Cohort investment</span>
                 <strong><span id="preview-currency"></span> <span id="preview-price"></span></strong>
+                <small id="preview-per-person"></small>
               </div>
               <div class="terms-block">
                 <p id="preview-terms"></p>
@@ -227,7 +252,7 @@
             </section>
 
             <footer class="document-footer">
-              <span>Prepared by <strong id="preview-prepared-by"></strong></span>
+              <span><span id="preview-prepared-by-label">Prepared by</span> <strong id="preview-prepared-by"></strong></span>
               <span id="preview-contact"></span>
             </footer>
           </article>

@@ -81,6 +81,12 @@ legend { padding: 0 10px 0 0; color: var(--navy); font-size: 0.78rem; font-weigh
 .field > span { color: #40536a; font-size: 0.72rem; font-weight: 700; }
 .field-detail { color: var(--teal); font-size: 0.68rem; font-weight: 800; }
 
+.template-summary { grid-column: 1 / -1; margin-top: 10px; border: 1px solid #c7d9e7; border-left: 4px solid var(--teal); border-radius: 5px; padding: 12px 14px; background: #f5f9fc; }
+.template-summary > strong { display: block; color: var(--navy); font-size: 0.82rem; }
+.template-summary-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.template-summary-meta span { border: 1px solid #c8dbe9; border-radius: 4px; padding: 4px 7px; background: #ffffff; color: #315069; font-size: 0.65rem; font-weight: 750; }
+.template-summary p { margin: 9px 0 0; color: #40536a; font-size: 0.7rem; line-height: 1.45; }
+
 input,
 select,
 textarea {
@@ -209,6 +215,7 @@ textarea:focus { outline: 2px solid #80bfff; outline-offset: 1px; border-color: 
 .terms-block { border: 1px solid #c9dce9; border-radius: 6px; padding: 10px 12px; background: #eaf4fc; }
 .price-block > span { display: block; color: var(--teal); font-size: 8px; font-weight: 800; text-transform: uppercase; }
 .price-block > strong { display: block; margin-top: 5px; color: var(--navy); font-size: 18px; }
+.price-block > small { display: block; margin-top: 3px; color: #40536a; font-size: 7px; font-weight: 700; }
 .terms-block { background: #f6fafc; }
 .terms-block p { margin: 0; color: #40536a; font-size: 8px; line-height: 1.35; }
 

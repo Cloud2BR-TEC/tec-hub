@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v12";
+const STORAGE_KEY = "cloud2br-program-pdf-v13";
 
 const courseCatalog = {
   "https://cloud2br-tec.github.io/ai-academy-101-ml/": {
@@ -579,10 +579,59 @@ Object.assign(templates, {
 });
 
 Object.values(templates).forEach((template) => {
+  template.language = "EN";
+  template.minCapacity = 5;
+  template.maxCapacity = 20;
+  template.cohortSize = "5–20 learners";
   template.documentType = template.brand === "Cloud2BR-TEC" ? "Training program" : "Learning program";
   template.preparedBy = "Cloud2BR";
   template.delivery = "Live Teams · 1–2 hours by session";
   template.sourceRefs = buildCourseSchedule(template.sourceRefs, template.modules, template.outcomes, template.duration);
+});
+
+Object.assign(templates, {
+  "es-cloud2br-tec": spanishProgram("cloud2br-tec", {
+    title: "Ruta completa de Machine Learning",
+    audience: "Científicos de datos e ingenieros de ML",
+    overview: "Un programa integral que avanza desde los fundamentos de machine learning hasta la implementación, el despliegue confiable, el monitoreo y la gestión del ciclo de vida.",
+    modules: "Conceptos y tipos de aprendizaje\nPreparación y evaluación de datos\nConstrucción y entrenamiento de modelos\nDespliegue y automatización\nMonitoreo y operación del ciclo de vida",
+    outcomes: "Explicar el ciclo de vida de ML\nPreparar datos y evaluar modelos\nConstruir y desplegar un modelo\nPlanificar el monitoreo en producción\nAplicar gobierno y prácticas operativas"
+  }),
+  "es-tec-rag-builder": spanishProgram("tec-rag-builder", {
+    title: "Ruta completa de RAG",
+    audience: "Desarrolladores de IA y arquitectos de soluciones",
+    overview: "Un programa completo desde los fundamentos de RAG hasta la creación de aplicaciones seguras, escalables y evaluadas para entornos de producción.",
+    modules: "Ingesta y preparación de documentos\nIndexación y búsqueda vectorial\nRecuperación y orquestación de prompts\nIntegración de experiencias conversacionales\nEvaluación, seguridad y operaciones",
+    outcomes: "Construir un flujo de ingesta documental\nCrear un índice vectorial consultable\nImplementar generación fundamentada\nIntegrar una experiencia conversacional\nPlanificar controles de producción"
+  }),
+  "es-microsoft-learning": spanishProgram("microsoft-learning", {
+    title: "Ruta de aprendizaje de Microsoft Fabric",
+    audience: "Ingenieros de datos y equipos de analítica",
+    overview: "Una progresión guiada desde los fundamentos de Fabric y escenarios prácticos hasta arquitectura empresarial, gobierno, capacidad y operación.",
+    modules: "Arquitectura de Fabric y OneLake\nLakehouse y arquitectura Medallion\nFlujos de ingeniería de datos\nIntegración con espacios de Power BI\nGestión de capacidad y costos",
+    outcomes: "Explicar la plataforma Fabric\nOrganizar las capas de datos del lakehouse\nConstruir un flujo básico de datos\nConectar experiencias analíticas\nEvaluar necesidades de capacidad"
+  }),
+  "es-msft-security-operations": spanishProgram("msft-security-operations", {
+    title: "Operaciones de seguridad Microsoft",
+    audience: "Ingenieros de seguridad y equipos de operaciones cloud",
+    overview: "Un programa integrado de operaciones de seguridad que cubre Defender, Sentinel, Security Copilot, campañas de seguridad y controles de Microsoft Purview.",
+    modules: "Defender for Cloud\nMicrosoft Sentinel\nSecurity Copilot\nCampañas de seguridad\nMicrosoft Purview",
+    outcomes: "Planificar la adopción de Defender\nDescribir las operaciones de Sentinel\nIdentificar casos de Security Copilot\nEstructurar una campaña de seguridad\nConectar controles de gobierno de datos"
+  }),
+  "es-msft-agent-mcp": spanishProgram("msft-agent-mcp", {
+    title: "Ingeniería de agentes de Azure y MCP",
+    audience: "Desarrolladores de IA, arquitectos e ingenieros de plataforma",
+    overview: "Un programa práctico para diseñar servicios de agentes, infraestructura segura, alojamiento MCP, agentes de datos de Fabric y prácticas operativas de producción.",
+    modules: "Fundamentos de plataformas de agentes\nInfraestructura para agentes de IA\nPatrones de alojamiento MCP\nIntegración de agentes con Fabric\nOperaciones de agentes",
+    outcomes: "Explicar las opciones de plataforma\nAprovisionar infraestructura de agentes\nComparar opciones de alojamiento MCP\nConectar agentes de Fabric y Copilot\nPlanificar operaciones controladas"
+  }),
+  "es-msft-document-automation": spanishProgram("msft-document-automation", {
+    title: "Implementaciones de automatización documental",
+    audience: "Ingenieros de datos, IA y automatización",
+    overview: "Un programa de implementación que compara extracción de facturas, procesamiento de diseños, señales visuales, frameworks abiertos y decisiones de arquitectura empresarial.",
+    modules: "Extracción administrada de facturas\nExtracción de diseños complejos\nEnrutamiento por señales visuales\nProcesamiento con frameworks abiertos\nSelección de arquitectura",
+    outcomes: "Construir un pipeline de facturas\nExtraer diseños complejos\nProcesar múltiples plantillas\nComparar orquestación abierta\nSeleccionar un patrón empresarial"
+  })
 });
 
 const form = document.querySelector("#program-form");
@@ -614,6 +663,35 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
     currency: "USD",
     contact: "cloud2br@outlook.com",
     terms: terms || `${duration === "Two weeks" ? "Ten" : "Five"} live training days at 1–2 hours per day. Cohort price includes digital materials, guided activities, and a completion summary.`
+  };
+}
+
+function spanishProgram(baseKey, copy) {
+  const base = templates[baseKey];
+  const focuses = `${copy.modules}\n${copy.outcomes}`.split("\n");
+  const sourceRefs = base.sourceRefs.split("\n").map((row, index) => {
+    const parts = row.split("|").map((item) => item.trim());
+    parts[0] = parts[0].replace("Day", "Día").replace("Week", "Semana");
+    parts[2] = focuses[index] || focuses[index % focuses.length];
+    return parts.join(" | ");
+  }).join("\n");
+  const crcPrice = Math.round(parsePrice(base.price) * 520 / 1000) * 1000;
+  return {
+    ...base,
+    language: "ES",
+    documentType: "Programa de formación",
+    kicker: "Programa tecnológico guiado",
+    programTitle: copy.title,
+    audience: copy.audience,
+    overview: copy.overview,
+    delivery: "Teams en vivo · 1–2 horas por sesión",
+    cohortSize: "5–20 participantes",
+    modules: copy.modules,
+    outcomes: copy.outcomes,
+    sourceRefs,
+    price: crcPrice.toLocaleString("en-US"),
+    currency: "CRC",
+    terms: `${base.duration === "Two weeks" ? "Diez" : "Cinco"} sesiones de formación en vivo de 1 a 2 horas. El precio del grupo incluye materiales digitales, actividades guiadas y resumen de finalización.`
   };
 }
 
@@ -684,7 +762,12 @@ function setFormValues(values) {
 
 function formValues() {
   const values = Object.fromEntries(new FormData(form).entries());
+  const template = templates[values.template];
   values.preparedBy = "Cloud2BR";
+  values.language = template?.language || "EN";
+  values.cohortSize = values.language === "ES"
+    ? `${values.minCapacity}–${values.maxCapacity} participantes`
+    : `${values.minCapacity}–${values.maxCapacity} learners`;
   form.elements.namedItem("preparedBy").value = values.preparedBy;
   return values;
 }
@@ -696,8 +779,74 @@ function scheduledHours(value) {
   }, 0);
 }
 
-function formatHours(hours) {
-  return `${Number.isInteger(hours) ? hours : hours.toFixed(1)} live hours`;
+function formatHours(hours, language = "EN") {
+  const value = Number.isInteger(hours) ? hours : hours.toFixed(1);
+  return language === "ES" ? `${value} horas en vivo` : `${value} live hours`;
+}
+
+function parsePrice(value) {
+  return Number.parseFloat(String(value).replace(/[^\d.]/g, "")) || 0;
+}
+
+function formatPrice(value, currency) {
+  const locale = currency === "CRC" ? "es-CR" : "en-US";
+  return Math.round(value).toLocaleString(locale);
+}
+
+function perPersonRange(values) {
+  const price = parsePrice(values.price);
+  const minimum = Number(values.minCapacity) || 1;
+  const maximum = Number(values.maxCapacity) || minimum;
+  const rounding = values.currency === "CRC" ? 1000 : 1;
+  const low = Math.ceil((price / maximum) / rounding) * rounding;
+  const high = Math.ceil((price / minimum) / rounding) * rounding;
+  return `${values.currency} ${formatPrice(low, values.currency)}–${formatPrice(high, values.currency)}`;
+}
+
+function setLocalizedLabels(language) {
+  const spanish = language === "ES";
+  const labels = {
+    "preview-prepared-for-label": spanish ? "Preparado para" : "Prepared for",
+    "preview-delivery-label": spanish ? "Modalidad" : "Delivery",
+    "preview-duration-label": spanish ? "Duración" : "Duration",
+    "preview-audience-label": spanish ? "Audiencia" : "Audience",
+    "preview-cohort-label": spanish ? "Grupo" : "Cohort",
+    "preview-focus-label": spanish ? "Enfoque del curso" : "Course focus",
+    "preview-outcomes-label": spanish ? "Resultados de aprendizaje" : "Learning takeaways",
+    "preview-flow-label": spanish ? "Flujo del programa" : "Learning program flow",
+    "preview-investment-label": spanish ? "Inversión por grupo" : "Cohort investment",
+    "preview-prepared-by-label": spanish ? "Preparado por" : "Prepared by"
+  };
+  Object.entries(labels).forEach(([id, label]) => setText(id, label));
+}
+
+function updateTemplateSummary(template) {
+  const hours = scheduledHours(template.sourceRefs);
+  const values = {
+    price: template.price,
+    currency: template.currency,
+    minCapacity: template.minCapacity,
+    maxCapacity: template.maxCapacity
+  };
+  const spanish = template.language === "ES";
+  setText("template-summary-title", template.programTitle);
+  setText("template-summary-language", spanish ? "Español" : "English");
+  setText("template-summary-duration", `${spanish ? (template.duration === "Two weeks" ? "2 semanas" : "1 semana") : template.duration} · ${formatHours(hours, template.language)}`);
+  setText("template-summary-capacity", `${template.minCapacity}–${template.maxCapacity} ${spanish ? "participantes" : "learners"}`);
+  setText("template-summary-price", `${spanish ? "Grupo" : "Cohort"}: ${template.currency} ${template.price}`);
+  setText("template-summary-person", `${perPersonRange(values)} ${spanish ? "por persona" : "per person"}`);
+  setText("template-summary-description", template.overview);
+}
+
+function decorateTemplateOptions() {
+  [...templateSelect.options].forEach((option) => {
+    const template = templates[option.value];
+    if (!template) return;
+    const hours = scheduledHours(template.sourceRefs);
+    const language = template.language;
+    const weeks = template.duration === "Two weeks" ? 2 : 1;
+    option.textContent = `[${language} · ${weeks}${language === "ES" ? " sem" : " wk"} · ${formatHours(hours, language)} · ${template.currency} ${template.price}] ${template.programTitle}`;
+  });
 }
 
 function validateCourseCount(values) {
@@ -709,6 +858,13 @@ function validateCourseCount(values) {
       ? `${values.duration} programs require exactly ${expectedCount} daily courses.`
       : ""
   );
+}
+
+function validateCapacity(values) {
+  const minimum = Number(values.minCapacity);
+  const maximum = Number(values.maxCapacity);
+  const maximumField = form.elements.namedItem("maxCapacity");
+  maximumField.setCustomValidity(maximum < minimum ? "Maximum capacity must be equal to or greater than minimum capacity." : "");
 }
 
 function setText(id, value) {
@@ -725,7 +881,7 @@ function setList(id, value) {
   }));
 }
 
-function setReferences(value) {
+function setReferences(value, language = "EN") {
   const container = document.querySelector("#preview-source-refs");
   const steps = value.split("\n").map((item) => item.trim()).filter(Boolean).slice(0, 10);
   const parsedSteps = steps.map((step) => step.split("|").map((item) => item.trim()));
@@ -761,7 +917,9 @@ function setReferences(value) {
     const copy = document.createElement("span");
     copy.className = "path-copy";
     const stageLabel = document.createElement("span");
-    stageLabel.textContent = moduleCount > 1 ? `${stage} · Module ${moduleNumber} of ${moduleCount}` : `${stage} · Course`;
+    stageLabel.textContent = moduleCount > 1
+      ? `${stage} · ${language === "ES" ? "Módulo" : "Module"} ${moduleNumber} ${language === "ES" ? "de" : "of"} ${moduleCount}`
+      : `${stage} · ${language === "ES" ? "Curso" : "Course"}`;
     const courseTitle = document.createElement("strong");
     courseTitle.textContent = title;
     const courseFocus = document.createElement("small");
@@ -769,11 +927,11 @@ function setReferences(value) {
     courseFocus.textContent = focus;
     const duration = document.createElement("small");
     duration.className = "path-duration";
-    duration.textContent = `${sessionLength} · Live Teams`;
+    duration.textContent = `${language === "ES" ? sessionLength.replace("hours", "horas").replace("hour", "hora") : sessionLength} · ${language === "ES" ? "Teams en vivo" : "Live Teams"}`;
     const action = document.createElement("small");
     action.className = "path-action";
-    action.textContent = "Open course ↗";
-    link.setAttribute("aria-label", `Open course page for ${title}`);
+    action.textContent = language === "ES" ? "Abrir curso ↗" : "Open course ↗";
+    link.setAttribute("aria-label", language === "ES" ? `Abrir página del curso ${title}` : `Open course page for ${title}`);
     copy.append(stageLabel, courseTitle, courseFocus, duration, action);
     link.append(sequence, copy);
     return link;
@@ -783,9 +941,12 @@ function setReferences(value) {
 function updatePreview() {
   const values = formValues();
   validateCourseCount(values);
+  validateCapacity(values);
   const selectedTemplate = templates[values.template];
   const totalHours = scheduledHours(values.sourceRefs || "");
-  setText("scheduled-hours", totalHours ? formatHours(totalHours) : "Hours calculated from sessions");
+  setLocalizedLabels(values.language);
+  updateTemplateSummary(selectedTemplate);
+  setText("scheduled-hours", totalHours ? formatHours(totalHours, values.language) : values.language === "ES" ? "Horas calculadas de las sesiones" : "Hours calculated from sessions");
   setText("preview-brand", "Cloud2BR");
   setText("preview-document-type", `${selectedTemplate.documentType} · ${selectedTemplate.brand}`);
   setText("preview-kicker", selectedTemplate.kicker);
@@ -794,14 +955,16 @@ function updatePreview() {
   setText("preview-prepared-by", values.preparedBy);
   setText("preview-overview", values.overview);
   setText("preview-delivery", values.delivery);
-  setText("preview-duration", totalHours ? `${values.duration} · ${formatHours(totalHours)}` : values.duration);
+  const duration = values.language === "ES" ? (values.duration === "Two weeks" ? "Dos semanas" : "Una semana") : values.duration;
+  setText("preview-duration", totalHours ? `${duration} · ${formatHours(totalHours, values.language)}` : duration);
   setText("preview-audience", values.audience);
   setText("preview-cohort-size", values.cohortSize);
   setList("preview-modules", values.modules);
   setList("preview-outcomes", values.outcomes);
-  setReferences(values.sourceRefs);
+  setReferences(values.sourceRefs, values.language);
   setText("preview-price", values.price);
   setText("preview-currency", values.currency);
+  setText("preview-per-person", `${perPersonRange(values)} ${values.language === "ES" ? "por persona" : "per person"}`);
   setText("preview-contact", values.contact);
   setText("preview-terms", values.terms);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(values));
@@ -928,4 +1091,5 @@ resetButton.addEventListener("click", () => {
 });
 generateButton.addEventListener("click", generatePdf);
 
+decorateTemplateOptions();
 restoreState();
