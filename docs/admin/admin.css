@@ -59,7 +59,7 @@ textarea { font: inherit; }
 .workspace {
   display: grid;
   min-height: calc(100vh - 76px);
-  grid-template-columns: minmax(350px, 0.78fr) minmax(560px, 1.22fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .editor { border-right: 1px solid var(--line); padding: 28px; background: var(--white); }

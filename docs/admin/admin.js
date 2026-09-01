@@ -1159,7 +1159,7 @@ function updatePreview() {
   updateTemplateSummary(selectedTemplate);
   setText("scheduled-hours", totalHours ? formatHours(totalHours, values.language) : values.language === "ES" ? "Horas calculadas de las sesiones" : "Hours calculated from sessions");
   setText("preview-brand", "Cloud2BR");
-  setText("preview-document-type", `${selectedTemplate.documentType} · ${selectedTemplate.brand}`);
+  setText("preview-document-type", values.language === "ES" ? "Programa de formación" : "Training program");
   setText("preview-kicker", selectedTemplate.kicker);
   setText("preview-title-value", values.programTitle);
   setText("preview-prepared-for", values.preparedFor);
