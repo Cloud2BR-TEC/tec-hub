@@ -86,6 +86,7 @@ legend { padding: 0 10px 0 0; color: var(--navy); font-size: 0.78rem; font-weigh
 .template-summary-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .template-summary-meta span { border: 1px solid #c8dbe9; border-radius: 4px; padding: 4px 7px; background: #ffffff; color: #315069; font-size: 0.65rem; font-weight: 750; }
 .template-summary p { margin: 9px 0 0; color: #40536a; font-size: 0.7rem; line-height: 1.45; }
+.communication-actions { display: flex; flex-wrap: wrap; gap: 7px; }
 
 input,
 select,

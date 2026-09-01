@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v13";
+const STORAGE_KEY = "cloud2br-program-pdf-v15";
 
 const courseCatalog = {
   "https://cloud2br-tec.github.io/ai-academy-101-ml/": {
@@ -172,7 +172,7 @@ const templates = {
     price: "4,800",
     currency: "USD",
     contact: "cloud2br@outlook.com",
-    terms: "Cohort price for ten live training days at 1–2 hours per day. Includes digital materials, guided labs, and completion certificates."
+    terms: "Program price for ten live training days at 1–2 hours per day. Includes digital materials, guided labs, and completion certificates."
   },
   "microsoft-learning": {
     brand: "Cloud2BR-MSFTLearningHub",
@@ -192,7 +192,7 @@ const templates = {
     price: "4,600",
     currency: "USD",
     contact: "cloud2br@outlook.com",
-    terms: "Cohort price for ten live training days at 1–2 hours per day. Includes guided activities and published supporting materials."
+    terms: "Program price for ten live training days at 1–2 hours per day. Includes guided activities and published supporting materials."
   }
 };
 
@@ -640,6 +640,9 @@ const generateButton = document.querySelector("#generate-button");
 const loadButton = document.querySelector("#load-button");
 const saveButton = document.querySelector("#save-button");
 const resetButton = document.querySelector("#reset-button");
+const refreshCommunicationButton = document.querySelector("#refresh-communication");
+const copyEmailButton = document.querySelector("#copy-email");
+const copyMessageButton = document.querySelector("#copy-message");
 const draftFile = document.querySelector("#draft-file");
 const status = document.querySelector("#status");
 
@@ -662,7 +665,7 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
     price,
     currency: "USD",
     contact: "cloud2br@outlook.com",
-    terms: terms || `${duration === "Two weeks" ? "Ten" : "Five"} live training days at 1–2 hours per day. Cohort price includes digital materials, guided activities, and a completion summary.`
+    terms: terms || `${duration === "Two weeks" ? "Ten" : "Five"} live training days at 1–2 hours per day. Program price includes digital materials, guided activities, and a completion summary.`
   };
 }
 
@@ -682,6 +685,7 @@ function spanishProgram(baseKey, copy) {
     documentType: "Programa de formación",
     kicker: "Programa tecnológico guiado",
     programTitle: copy.title,
+    preparedFor: "Organización cliente",
     audience: copy.audience,
     overview: copy.overview,
     delivery: "Teams en vivo · 1–2 horas por sesión",
@@ -691,7 +695,7 @@ function spanishProgram(baseKey, copy) {
     sourceRefs,
     price: crcPrice.toLocaleString("en-US"),
     currency: "CRC",
-    terms: `${base.duration === "Two weeks" ? "Diez" : "Cinco"} sesiones de formación en vivo de 1 a 2 horas. El precio del grupo incluye materiales digitales, actividades guiadas y resumen de finalización.`
+    terms: `${base.duration === "Two weeks" ? "Diez" : "Cinco"} sesiones de formación en vivo de 1 a 2 horas. La inversión del programa incluye materiales digitales, actividades guiadas y resumen de finalización.`
   };
 }
 
@@ -803,6 +807,56 @@ function perPersonRange(values) {
   return `${values.currency} ${formatPrice(low, values.currency)}–${formatPrice(high, values.currency)}`;
 }
 
+function communicationCopy(values) {
+  const spanish = values.language === "ES";
+  const hours = scheduledHours(values.sourceRefs || "");
+  const sessionCount = (values.sourceRefs || "").split("\n").filter((row) => row.trim()).length;
+  const duration = spanish
+    ? values.duration === "Two weeks" ? "dos semanas" : "una semana"
+    : values.duration.toLowerCase();
+  const durationAdjective = values.duration === "Two weeks" ? "two-week" : "one-week";
+  const capacity = `${values.minCapacity}–${values.maxCapacity}`;
+  const investment = `${values.currency} ${values.price}`;
+  const perPerson = perPersonRange(values);
+
+  if (spanish) {
+    return {
+      emailSubject: `Propuesta de formación: ${values.programTitle}`,
+      emailBody: `Hola [Nombre]:\n\nLe comparto el programa ${values.programTitle} de Cloud2BR, una experiencia de aprendizaje en vivo de ${duration} diseñada para ${values.audience}.\n\nEl programa incluye ${formatHours(hours, "ES")} distribuidas en ${sessionCount} sesiones guiadas y admite de ${values.minCapacity} a ${values.maxCapacity} participantes. La inversión del programa es de ${investment}, equivalente aproximadamente a ${perPerson} por persona, según la cantidad de participantes.\n\nAdjunto encontrará el PDF de una página con el flujo de aprendizaje, los cursos, los resultados esperados y los detalles de entrega.\n\n¿Podemos coordinar una breve conversación para revisar el ajuste del programa y las fechas disponibles?\n\nSaludos,\nCloud2BR\n${values.contact}`,
+      messageBody: `Hola [Nombre], le comparto el programa ${values.programTitle} de Cloud2BR: ${duration}, ${formatHours(hours, "ES")}, para ${capacity} participantes. La inversión es de ${investment} (${perPerson} por persona, según asistencia). Adjunto el PDF con el flujo de aprendizaje y los cursos. ¿Coordinamos una breve conversación para revisar fechas y ajuste?`
+    };
+  }
+
+  return {
+    emailSubject: `Training proposal: ${values.programTitle}`,
+    emailBody: `Hello [Name],\n\nI’m sharing Cloud2BR’s ${values.programTitle}, a ${durationAdjective} live learning program designed for ${values.audience}.\n\nThe program includes ${formatHours(hours)} across ${sessionCount} guided sessions and supports ${values.minCapacity} to ${values.maxCapacity} participants. Program investment is ${investment}, equivalent to approximately ${perPerson} per person depending on attendance.\n\nI’ve attached the one-page PDF outlining the learning flow, courses, expected outcomes, and delivery details.\n\nWould you be available for a brief conversation to review program fit and available dates?\n\nBest,\nCloud2BR\n${values.contact}`,
+    messageBody: `Hello [Name], I’m sharing Cloud2BR’s ${values.programTitle}: ${duration}, ${formatHours(hours)}, for ${capacity} participants. Program investment is ${investment} (${perPerson} per person depending on attendance). I’ve attached the PDF with the learning flow and courses. Would you be open to a brief conversation about fit and scheduling?`
+  };
+}
+
+function refreshCommunication(announce = true) {
+  const values = formValues();
+  setFormValues(communicationCopy(values));
+  if (announce) status.textContent = values.language === "ES" ? "Plantillas de comunicación actualizadas." : "Communication templates refreshed.";
+}
+
+async function copyCommunication(fieldNames, successMessage) {
+  const text = fieldNames.map((name) => form.elements.namedItem(name).value.trim()).filter(Boolean).join("\n\n");
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const helper = document.createElement("textarea");
+    helper.value = text;
+    helper.style.position = "fixed";
+    helper.style.opacity = "0";
+    document.body.append(helper);
+    helper.select();
+    document.execCommand("copy");
+    helper.remove();
+  }
+  status.textContent = successMessage;
+}
+
 function setLocalizedLabels(language) {
   const spanish = language === "ES";
   const labels = {
@@ -814,7 +868,7 @@ function setLocalizedLabels(language) {
     "preview-focus-label": spanish ? "Enfoque del curso" : "Course focus",
     "preview-outcomes-label": spanish ? "Resultados de aprendizaje" : "Learning takeaways",
     "preview-flow-label": spanish ? "Flujo del programa" : "Learning program flow",
-    "preview-investment-label": spanish ? "Inversión por grupo" : "Cohort investment",
+    "preview-investment-label": spanish ? "Inversión del programa" : "Program investment",
     "preview-prepared-by-label": spanish ? "Preparado por" : "Prepared by"
   };
   Object.entries(labels).forEach(([id, label]) => setText(id, label));
@@ -833,7 +887,7 @@ function updateTemplateSummary(template) {
   setText("template-summary-language", spanish ? "Español" : "English");
   setText("template-summary-duration", `${spanish ? (template.duration === "Two weeks" ? "2 semanas" : "1 semana") : template.duration} · ${formatHours(hours, template.language)}`);
   setText("template-summary-capacity", `${template.minCapacity}–${template.maxCapacity} ${spanish ? "participantes" : "learners"}`);
-  setText("template-summary-price", `${spanish ? "Grupo" : "Cohort"}: ${template.currency} ${template.price}`);
+  setText("template-summary-price", `${spanish ? "Programa" : "Program"}: ${template.currency} ${template.price}`);
   setText("template-summary-person", `${perPersonRange(values)} ${spanish ? "por persona" : "per person"}`);
   setText("template-summary-description", template.overview);
 }
@@ -971,7 +1025,8 @@ function updatePreview() {
 }
 
 function applyTemplate(templateName) {
-  setFormValues({ ...templates[templateName], template: templateName });
+  const values = { ...templates[templateName], template: templateName };
+  setFormValues({ ...values, ...communicationCopy(values) });
   updatePreview();
 }
 
@@ -1075,6 +1130,9 @@ form.addEventListener("input", (event) => {
 templateSelect.addEventListener("change", () => applyTemplate(templateSelect.value));
 loadButton.addEventListener("click", () => draftFile.click());
 saveButton.addEventListener("click", downloadDraft);
+refreshCommunicationButton.addEventListener("click", () => refreshCommunication());
+copyEmailButton.addEventListener("click", () => copyCommunication(["emailSubject", "emailBody"], "Email template copied."));
+copyMessageButton.addEventListener("click", () => copyCommunication(["messageBody"], "Message template copied."));
 draftFile.addEventListener("change", loadDraft);
 resetButton.addEventListener("click", () => {
   localStorage.removeItem(STORAGE_KEY);

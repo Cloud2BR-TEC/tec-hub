@@ -181,6 +181,27 @@
               <textarea id="terms" name="terms" maxlength="260" rows="3" required></textarea>
             </label>
           </fieldset>
+
+          <fieldset class="field-grid">
+            <legend>Communication templates</legend>
+            <div class="communication-actions field-full">
+              <button class="button button-secondary" id="refresh-communication" type="button">Refresh from program</button>
+              <button class="button button-secondary" id="copy-email" type="button">Copy email</button>
+              <button class="button button-secondary" id="copy-message" type="button">Copy message</button>
+            </div>
+            <label class="field field-full">
+              <span>Email subject</span>
+              <input id="email-subject" name="emailSubject" maxlength="140" required>
+            </label>
+            <label class="field field-full">
+              <span>Email body</span>
+              <textarea id="email-body" name="emailBody" maxlength="1800" rows="11" required></textarea>
+            </label>
+            <label class="field field-full">
+              <span>Short message · Teams, LinkedIn, WhatsApp, or SMS</span>
+              <textarea id="message-body" name="messageBody" maxlength="700" rows="6" required></textarea>
+            </label>
+          </fieldset>
         </form>
       </section>
 
@@ -242,7 +263,7 @@
 
             <section class="commercial-band">
               <div class="price-block">
-                <span id="preview-investment-label">Cohort investment</span>
+                <span id="preview-investment-label">Program investment</span>
                 <strong><span id="preview-currency"></span> <span id="preview-price"></span></strong>
                 <small id="preview-per-person"></small>
               </div>
