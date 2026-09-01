@@ -36,22 +36,17 @@
               <span>Program template</span>
               <select id="template" name="template">
                 <optgroup label="Cloud2BR-TEC">
-                  <option value="cloud2br-tec">RAG Foundations</option>
-                  <option value="tec-rag-builder">Build a RAG Application</option>
-                  <option value="tec-production-ml">Production Machine Learning</option>
+                  <option value="cloud2br-tec">Machine Learning Complete Path</option>
+                  <option value="tec-rag-builder">RAG Complete Path</option>
+                  <option value="tec-production-ml">Production ML Standalone</option>
                   <option value="tec-document-intelligence">Document Intelligence ETL</option>
                   <option value="tec-ai-operations">Azure AI Operations</option>
                 </optgroup>
-                <optgroup label="Cloud2BR">
-                  <option value="cloud2br">Document Productivity Toolkit</option>
-                  <option value="cloud2br-dashboards">Data Dashboard Lab</option>
-                  <option value="cloud2br-devops">DevOps Organization Automation</option>
-                </optgroup>
                 <optgroup label="Cloud2BR-MSFTLearningHub">
-                  <option value="microsoft-learning">Microsoft Fabric Fundamentals</option>
-                  <option value="msft-azure-ai">Azure AI and RAG Engineering</option>
-                  <option value="msft-fabric-ai">Fabric AI Skills</option>
-                  <option value="msft-certification">Azure AI Fundamentals Study Path</option>
+                  <option value="microsoft-learning">Microsoft Fabric Learning Path</option>
+                  <option value="msft-azure-ai">Azure AI and RAG Learning Path</option>
+                  <option value="msft-fabric-ai">Fabric Essentials Standalone</option>
+                  <option value="msft-certification">AI-900 Support Path</option>
                 </optgroup>
               </select>
             </label>
@@ -110,7 +105,7 @@
               <textarea id="outcomes" name="outcomes" maxlength="420" rows="5" required></textarea>
             </label>
             <label class="field field-full">
-              <span>Source content, one URL per line</span>
+              <span>Path steps: stage | course | published page</span>
               <textarea id="source-refs" name="sourceRefs" maxlength="600" rows="3" required></textarea>
             </label>
           </fieldset>
@@ -195,8 +190,8 @@
               </section>
             </div>
 
-            <section class="document-references">
-              <strong>Source content</strong>
+            <section class="document-path">
+              <strong>Learning path · select a course to open its published page</strong>
               <div id="preview-source-refs"></div>
             </section>
 

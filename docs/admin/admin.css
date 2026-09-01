@@ -173,11 +173,13 @@ textarea:focus { outline: 2px solid #80bfff; outline-offset: 1px; border-color: 
 .document-columns li { margin-bottom: 7px; padding-left: 2px; }
 .document-columns li::marker { color: var(--blue); font-weight: 800; }
 
-.document-references { margin: 0 5.5% 2.5%; border-top: 1px solid var(--line); padding-top: 8px; }
-.document-references > strong { display: block; margin-bottom: 4px; color: var(--teal); font-size: 8px; text-transform: uppercase; }
-.document-references > div { display: flex; flex-wrap: wrap; gap: 3px 12px; }
-.document-references a { color: #315d73; font-size: 7.5px; text-decoration: none; }
-.document-references a::before { color: var(--blue); content: "• "; }
+.document-path { margin: 0 5.5% 2.5%; border-top: 1px solid var(--line); padding-top: 8px; }
+.document-path > strong { display: block; margin-bottom: 7px; color: var(--teal); font-size: 8px; text-transform: uppercase; }
+.document-path > div { display: flex; align-items: stretch; gap: 18px; }
+.path-node { position: relative; display: grid; min-width: 0; flex: 1; align-content: center; border: 1px solid #bfd5e7; border-left: 4px solid var(--blue); border-radius: 4px; padding: 7px 9px; background: #f4f9fd; color: var(--navy); text-decoration: none; }
+.path-node:not(:last-child)::after { position: absolute; top: 50%; right: -15px; color: var(--teal); content: "→"; font-size: 12px; font-weight: 800; transform: translateY(-50%); }
+.path-node span { color: var(--teal); font-size: 7px; font-weight: 800; text-transform: uppercase; }
+.path-node strong { margin-top: 2px; font-size: 8px; line-height: 1.2; }
 .document-disclaimer { margin: 0 5.5% 2.3%; color: #66768a; font-size: 7px; font-style: italic; line-height: 1.3; }
 
 .commercial-band { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 20px; padding: 3% 5.5%; background: #eaf4fc; }
