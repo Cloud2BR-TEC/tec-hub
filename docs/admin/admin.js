@@ -63,7 +63,7 @@ Object.assign(templates, {
     overview: "A visual and practical introduction to machine learning concepts, Azure ML, data-to-endpoint lifecycle, model evaluation, deployment, and monitoring.",
     modules: "Machine learning basics\nAzure ML overview\nWorkspace and authoring\nBuild and evaluate a first model\nDeploy, score, and monitor",
     outcomes: "Explain core ML concepts\nNavigate an Azure ML workspace\nBuild and evaluate a model\nDescribe model deployment\nRecognize lifecycle responsibilities",
-    sources: "Standalone | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/",
+    sources: "Start | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/\nContinue | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/",
     price: "3,200"
   }),
   "tec-ml-102": program({
@@ -74,7 +74,7 @@ Object.assign(templates, {
     overview: "An applied path through ML mathematics, model families, Azure ML environments, data preparation, training, metrics, explainability, and deployment.",
     modules: "ML math and lifecycle\nData preparation and model types\nTraining and AutoML\nMetrics and explainability\nDeployment and debugging",
     outcomes: "Frame an end-to-end ML workflow\nPrepare data for training\nCompare model approaches\nInterpret evaluation metrics\nDeploy and troubleshoot a model",
-    sources: "Standalone | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/",
+    sources: "Start | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/\nContinue | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
     price: "3,200"
   }),
   "tec-production-ml": program({
@@ -85,7 +85,7 @@ Object.assign(templates, {
     overview: "A build-to-production learning path for model development, deployment pipelines, monitoring, automation, governance, and cost-aware operations.",
     modules: "Model development and training\nExperiment tracking and evaluation\nDeployment pipelines\nMonitoring and drift detection\nLifecycle automation and governance",
     outcomes: "Train and evaluate ML models\nDesign repeatable deployment flows\nMonitor model behavior\nAutomate lifecycle activities\nApply production governance",
-    sources: "Standalone | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
+    sources: "Prepare | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/\nBuild | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/\nOperate | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
     price: "3,200"
   }),
   "tec-rag-101": program({
@@ -96,7 +96,7 @@ Object.assign(templates, {
     overview: "A practical foundation in retrieval-augmented generation, architecture options, retrieval quality, data ingestion, security, and Azure implementation considerations.",
     modules: "RAG concepts and use cases\nRetrieval and augmentation\nBasic architecture\nZero Trust architecture\nQuality and cost considerations",
     outcomes: "Explain a RAG workflow\nCompare architecture options\nPlan content ingestion\nIdentify security controls\nAssess quality and cost drivers",
-    sources: "Standalone | RAG Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-rag/",
+    sources: "Start | RAG Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-rag/\nContinue | Build a RAG App 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/",
     price: "3,200"
   }),
   "tec-rag-102": program({
@@ -107,7 +107,7 @@ Object.assign(templates, {
     overview: "A build-focused course on multi-agent RAG concepts, orchestration responsibilities, implementation options, evaluation, and application delivery.",
     modules: "Multi-agent RAG concepts\nAgent responsibilities\nOrchestration approaches\nImplementation options\nEvaluation and delivery",
     outcomes: "Describe multi-agent RAG\nAssign agent responsibilities\nCompare build approaches\nPlan an implementation\nDefine evaluation criteria",
-    sources: "Standalone | Build RAG 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/",
+    sources: "Build | Build RAG 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/\nOperate | Production RAG 103 | https://cloud2br-tec.github.io/ai-academy-103-rag/",
     price: "3,200"
   }),
   "tec-document-intelligence": program({
@@ -118,7 +118,7 @@ Object.assign(templates, {
     overview: "A hands-on document processing path covering invoice and layout extraction, Azure Document Intelligence, validation, and downstream ETL patterns.",
     modules: "Document processing architecture\nLayout and invoice extraction\nField mapping and validation\nOpen framework pipelines\nOperational ETL patterns",
     outcomes: "Select a document extraction approach\nProcess layout and invoice content\nValidate extracted fields\nConnect extraction to ETL\nPlan reliable operations",
-    sources: "Standalone | Docs ETL 101 | https://cloud2br-tec.github.io/ai-academy-101-docs-etl/",
+    sources: "Build | Docs ETL 101 | https://cloud2br-tec.github.io/ai-academy-101-docs-etl/\nOperate | AI Operations 101 | https://cloud2br-tec.github.io/ai-academy-101-ops/",
     price: "3,200"
   }),
   "tec-ai-operations": program({
@@ -129,7 +129,7 @@ Object.assign(templates, {
     overview: "A practical introduction to GenAIOps and MLOps across evaluation, deployment, monitoring, governance, security, and continuous improvement.",
     modules: "AI application lifecycle\nEvaluation and release controls\nDeployment and monitoring\nGovernance and security\nContinuous improvement",
     outcomes: "Map the AI delivery lifecycle\nDefine evaluation gates\nPlan monitored deployments\nApply governance controls\nCreate an improvement loop",
-    sources: "Standalone | AI Operations 101 | https://cloud2br-tec.github.io/ai-academy-101-ops/",
+    sources: "Start | AI Operations 101 | https://cloud2br-tec.github.io/ai-academy-101-ops/\nApply | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
     price: "3,200"
   }),
   "msft-azure-ai": program({
@@ -145,13 +145,13 @@ Object.assign(templates, {
   }),
   "msft-fabric-ai": program({
     brand: "Cloud2BR-MSFTLearningHub",
-    title: "Fabric Essentials Standalone",
+    title: "Fabric Essentials Learning Path",
     duration: "One week",
     audience: "Data and BI professionals",
     overview: "A concise live session exploring AI experiences in Microsoft Fabric, conversational data access, Power BI integration, and tenant-level considerations.",
     modules: "Fabric AI capabilities\nConversational data access\nAI Skills configuration\nPower BI integration\nGovernance considerations",
     outcomes: "Recognize Fabric AI scenarios\nDescribe AI Skills architecture\nConnect AI and BI experiences\nIdentify configuration needs\nPlan a governed pilot",
-    sources: "Standalone | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
+    sources: "Start | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nExtend | Fabric Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
     price: "3,200"
   }),
   "msft-fabric-enterprise": program({
@@ -162,7 +162,7 @@ Object.assign(templates, {
     overview: "A structured guide to Fabric platform foundations, governance, security, versioned delivery, observability, capacity operations, and cost management.",
     modules: "Platform foundations\nGovernance and security\nSource control and delivery\nObservability and capacity\nCost-aware operations",
     outcomes: "Define Fabric platform boundaries\nPlan governed workspaces\nDesign controlled delivery\nEstablish operational signals\nAssess capacity and cost",
-    sources: "Standalone | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
+    sources: "Prepare | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nApply | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
     price: "3,200"
   }),
   "msft-demos": program({
@@ -173,7 +173,7 @@ Object.assign(templates, {
     overview: "A curated live exploration of Microsoft cloud demonstrations spanning Azure, analytics, Fabric, AI, operations, Microsoft 365, Dynamics, and Power Platform.",
     modules: "Azure foundations and data\nAnalytics and Fabric\nAzure AI and machine learning\nCloud operations and applications\nMicrosoft 365 and Power Platform",
     outcomes: "Navigate the scenario library\nSelect relevant demonstrations\nIdentify architecture questions\nPlan a controlled proof of concept\nDefine follow-up learning",
-    sources: "Standalone | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/",
+    sources: "Explore | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/\nDeepen | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
     price: "1,200"
   }),
   "msft-certification": program({
@@ -184,7 +184,7 @@ Object.assign(templates, {
     overview: "A community study path that organizes Azure AI concepts, practical review, and readiness checks around the AI-900 learning objectives.",
     modules: "AI workloads and considerations\nMachine learning fundamentals\nComputer vision concepts\nNatural language processing\nGenerative AI concepts and review",
     outcomes: "Organize AI fundamentals concepts\nRelate workloads to Azure services\nReview responsible AI principles\nIdentify knowledge gaps\nPrepare a continued study plan",
-    sources: "Standalone | AI-900 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/",
+    sources: "Start | AI-900 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/\nContinue | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/",
     price: "2,000",
     terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
   }),
@@ -196,7 +196,7 @@ Object.assign(templates, {
     overview: "A community support path organizing solution planning, responsible AI, content moderation, vision, language, knowledge mining, and generative AI topics.",
     modules: "Azure AI solution planning\nResponsible AI and content safety\nComputer vision and NLP\nKnowledge mining\nGenerative AI solutions",
     outcomes: "Organize AI solution concepts\nReview responsible AI controls\nCompare AI workloads\nIdentify implementation gaps\nCreate a continued study plan",
-    sources: "Standalone | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/",
+    sources: "Prepare | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/\nBuild | RAG ChatBot Implementation | https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/",
     price: "2,400",
     terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
   }),
@@ -208,7 +208,7 @@ Object.assign(templates, {
     overview: "A community support path covering core data concepts and Azure services for relational, non-relational, analytics, and modern data workloads.",
     modules: "Core data concepts\nRelational data on Azure\nNon-relational data on Azure\nAnalytics workloads\nGuided review and practice",
     outcomes: "Describe core data concepts\nCompare relational services\nCompare non-relational services\nRecognize analytics workloads\nCreate a continued study plan",
-    sources: "Standalone | DP-900 Support Guide | https://cloud2br-msftlearninghub.github.io/DP-900StudyGuide/",
+    sources: "Start | DP-900 Support Guide | https://cloud2br-msftlearninghub.github.io/DP-900StudyGuide/\nApply | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
     price: "2,000",
     terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
   })
@@ -419,7 +419,16 @@ saveButton.addEventListener("click", downloadDraft);
 draftFile.addEventListener("change", loadDraft);
 resetButton.addEventListener("click", () => {
   localStorage.removeItem(STORAGE_KEY);
-  applyTemplate(templateSelect.value);
+  [...form.elements].forEach((field) => {
+    if (!field.name || field.name === "template") return;
+    if (field instanceof HTMLSelectElement) {
+      field.selectedIndex = -1;
+    } else {
+      field.value = "";
+    }
+  });
+  updatePreview();
+  status.textContent = "Editable fields cleared.";
 });
 generateButton.addEventListener("click", generatePdf);
 
