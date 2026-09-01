@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v5";
+const STORAGE_KEY = "cloud2br-program-pdf-v6";
 
 const templates = {
   "cloud2br-tec": {
@@ -211,6 +211,10 @@ Object.assign(templates, {
   })
 });
 
+Object.values(templates).forEach((template) => {
+  template.sourceRefs = buildCourseSchedule(template.sourceRefs, template.modules, template.duration);
+});
+
 const form = document.querySelector("#program-form");
 const templateSelect = document.querySelector("#template");
 const generateButton = document.querySelector("#generate-button");
@@ -243,6 +247,27 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
   };
 }
 
+function buildCourseSchedule(sources, modules, duration) {
+  const publishedCourses = sources.split("\n").map((source) => {
+    const [, title = "Course source", url = ""] = source.split("|").map((item) => item.trim());
+    return { title, url };
+  });
+  const topics = modules.split("\n").map((topic) => topic.trim()).filter(Boolean);
+  const courseCount = duration === "Two weeks" ? 10 : 5;
+
+  return Array.from({ length: courseCount }, (_, index) => {
+    const sourceIndex = Math.min(
+      publishedCourses.length - 1,
+      Math.floor(index * publishedCourses.length / courseCount)
+    );
+    const source = publishedCourses[sourceIndex];
+    const topic = topics[index % topics.length] || source.title;
+    const title = index < topics.length ? topic : `Application: ${topic}`;
+    const week = courseCount === 10 ? ` · Week ${index < 5 ? 1 : 2}` : "";
+    return `Day ${index + 1}${week} | ${title} | ${source.url}`;
+  }).join("\n");
+}
+
 function setFormValues(values) {
   Object.entries(values).forEach(([name, value]) => {
     const field = form.elements.namedItem(name);
@@ -252,6 +277,17 @@ function setFormValues(values) {
 
 function formValues() {
   return Object.fromEntries(new FormData(form).entries());
+}
+
+function validateCourseCount(values) {
+  const sourceField = form.elements.namedItem("sourceRefs");
+  const courseCount = (values.sourceRefs || "").split("\n").map((item) => item.trim()).filter(Boolean).length;
+  const expectedCount = values.duration === "Two weeks" ? 10 : values.duration === "One week" ? 5 : 0;
+  sourceField.setCustomValidity(
+    expectedCount && courseCount !== expectedCount
+      ? `${values.duration} programs require exactly ${expectedCount} daily courses.`
+      : ""
+  );
 }
 
 function setText(id, value) {
@@ -270,7 +306,7 @@ function setList(id, value) {
 
 function setReferences(value) {
   const container = document.querySelector("#preview-source-refs");
-  const steps = value.split("\n").map((item) => item.trim()).filter(Boolean).slice(0, 3);
+  const steps = value.split("\n").map((item) => item.trim()).filter(Boolean).slice(0, 10);
   container.replaceChildren(...steps.map((step, index) => {
     const [stage = "Course", title = "Open course", url = ""] = step.split("|").map((item) => item.trim());
     const link = document.createElement("a");
@@ -293,7 +329,7 @@ function setReferences(value) {
     const courseTitle = document.createElement("strong");
     courseTitle.textContent = title;
     const action = document.createElement("small");
-    action.textContent = "Open course ↗";
+    action.textContent = "Course source ↗";
     link.setAttribute("aria-label", `Open ${title} course page`);
     copy.append(stageLabel, courseTitle, action);
     link.append(sequence, copy);
@@ -303,6 +339,7 @@ function setReferences(value) {
 
 function updatePreview() {
   const values = formValues();
+  validateCourseCount(values);
   const selectedTemplate = templates[values.template];
   setText("preview-brand", selectedTemplate.brand);
   setText("preview-document-type", selectedTemplate.documentType);
@@ -415,7 +452,17 @@ async function generatePdf() {
   }
 }
 
-form.addEventListener("input", updatePreview);
+form.addEventListener("input", (event) => {
+  if (event.target === form.elements.namedItem("duration")) {
+    const values = formValues();
+    form.elements.namedItem("sourceRefs").value = buildCourseSchedule(
+      values.sourceRefs,
+      values.modules,
+      values.duration
+    );
+  }
+  updatePreview();
+});
 templateSelect.addEventListener("change", () => applyTemplate(templateSelect.value));
 loadButton.addEventListener("click", () => draftFile.click());
 saveButton.addEventListener("click", downloadDraft);
