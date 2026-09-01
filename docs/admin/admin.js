@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v6";
+const STORAGE_KEY = "cloud2br-program-pdf-v7";
 
 const templates = {
   "cloud2br-tec": {
@@ -212,6 +212,9 @@ Object.assign(templates, {
 });
 
 Object.values(templates).forEach((template) => {
+  const topics = template.modules.split("\n").map((topic) => topic.trim()).filter(Boolean);
+  template.documentType = "Repository course series";
+  template.overview = `A curated set of repository-backed courses covering ${topics.join(", ")}.`;
   template.sourceRefs = buildCourseSchedule(template.sourceRefs, template.modules, template.duration);
 });
 
@@ -249,7 +252,9 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
 
 function buildCourseSchedule(sources, modules, duration) {
   const publishedCourses = sources.split("\n").map((source) => {
-    const [, title = "Course source", url = ""] = source.split("|").map((item) => item.trim());
+    const parts = source.split("|").map((item) => item.trim());
+    const title = parts[1] || "Repository course";
+    const url = parts.length >= 4 ? parts[3] : parts[2] || "";
     return { title, url };
   });
   const topics = modules.split("\n").map((topic) => topic.trim()).filter(Boolean);
@@ -262,9 +267,9 @@ function buildCourseSchedule(sources, modules, duration) {
     );
     const source = publishedCourses[sourceIndex];
     const topic = topics[index % topics.length] || source.title;
-    const title = index < topics.length ? topic : `Application: ${topic}`;
+    const focus = index < topics.length ? topic : `Applied practice: ${topic}`;
     const week = courseCount === 10 ? ` · Week ${index < 5 ? 1 : 2}` : "";
-    return `Day ${index + 1}${week} | ${title} | ${source.url}`;
+    return `Day ${index + 1}${week} | ${source.title} | ${focus} | ${source.url}`;
   }).join("\n");
 }
 
@@ -308,7 +313,11 @@ function setReferences(value) {
   const container = document.querySelector("#preview-source-refs");
   const steps = value.split("\n").map((item) => item.trim()).filter(Boolean).slice(0, 10);
   container.replaceChildren(...steps.map((step, index) => {
-    const [stage = "Course", title = "Open course", url = ""] = step.split("|").map((item) => item.trim());
+    const parts = step.split("|").map((item) => item.trim());
+    const [stage = "Course", title = "Repository course"] = parts;
+    const hasFocus = parts.length >= 4;
+    const focus = hasFocus ? parts[2] : "Guided repository course";
+    const url = hasFocus ? parts[3] : parts[2] || "";
     const link = document.createElement("a");
     link.className = "path-node";
     try {
@@ -328,10 +337,14 @@ function setReferences(value) {
     stageLabel.textContent = stage;
     const courseTitle = document.createElement("strong");
     courseTitle.textContent = title;
+    const courseFocus = document.createElement("small");
+    courseFocus.className = "path-focus";
+    courseFocus.textContent = `${focus} · Live 1–2 hours`;
     const action = document.createElement("small");
-    action.textContent = "Course source ↗";
-    link.setAttribute("aria-label", `Open ${title} course page`);
-    copy.append(stageLabel, courseTitle, action);
+    action.className = "path-action";
+    action.textContent = "Open course ↗";
+    link.setAttribute("aria-label", `Open ${title} repository course`);
+    copy.append(stageLabel, courseTitle, courseFocus, action);
     link.append(sequence, copy);
     return link;
   }));
