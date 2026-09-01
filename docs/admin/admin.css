@@ -200,7 +200,8 @@ textarea:focus { outline: 2px solid #80bfff; outline-offset: 1px; border-color: 
 .path-copy > strong { margin-top: 3px; font-size: 8px; line-height: 1.2; }
 .path-copy > small { font-size: 6.5px; line-height: 1.2; }
 .path-focus { margin-top: 4px; color: var(--muted); }
-.path-action { margin-top: 4px; color: var(--blue); font-weight: 800; text-transform: uppercase; }
+.path-duration { margin-top: 3px; color: var(--teal); font-weight: 800; }
+.path-action { margin-top: 3px; color: var(--blue); font-weight: 800; text-transform: uppercase; }
 
 .commercial-band { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 10px; padding: 0 5.5% 2.5%; background: #ffffff; }
 .price-block,

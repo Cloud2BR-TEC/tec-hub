@@ -1,4 +1,157 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v7";
+const STORAGE_KEY = "cloud2br-program-pdf-v9";
+
+const courseCatalog = {
+  "https://cloud2br-tec.github.io/ai-academy-101-ml/": {
+    title: "Machine Learning Fundamentals",
+    sessions: [
+      ["ML basics, vocabulary, and practical examples", "1 hour"],
+      ["Azure ML lifecycle, workspace, and authoring", "1.5 hours"],
+      ["Assets, lineage, and a guided model build", "2 hours"],
+      ["Build, evaluate, and interpret model metrics", "2 hours"],
+      ["Deploy, score, and monitor a model", "2 hours"]
+    ]
+  },
+  "https://cloud2br-tec.github.io/ai-academy-102-ml/": {
+    title: "Applied Machine Learning",
+    sessions: [
+      ["ML math, taxonomy, and end-to-end lifecycle", "1.5 hours"],
+      ["Azure ML environment and runtime setup", "1.5 hours"],
+      ["Data preparation and model selection", "2 hours"],
+      ["Training, AutoML, metrics, and explainability", "2 hours"],
+      ["Endpoint deployment and debugging", "2 hours"]
+    ]
+  },
+  "https://cloud2br-tec.github.io/ai-academy-103-ml/": {
+    title: "Advanced ML and MLOps",
+    sessions: [
+      ["Environment, access, and Azure ML setup", "1.5 hours"],
+      ["Build, register, and deploy an Azure ML model", "2 hours"],
+      ["Fabric AI workloads and LLM notebook flow", "2 hours"],
+      ["SynapseML and LangChain integration", "1.5 hours"],
+      ["Operations, validation, and handover", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-tec.github.io/ai-academy-101-rag/": {
+    title: "RAG Fundamentals",
+    sessions: [
+      ["RAG patterns, use cases, and solution choices", "1 hour"],
+      ["Retrieval, ingestion, indexing, and grounding", "1.5 hours"],
+      ["Basic architecture and Terraform deployment", "2 hours"],
+      ["Zero Trust architecture and network isolation", "2 hours"],
+      ["Quality evaluation, pricing, and operations", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-tec.github.io/ai-academy-102-rag/": {
+    title: "Multi-Agent RAG Chatbot",
+    sessions: [
+      ["Multi-agent RAG concepts and responsibilities", "1 hour"],
+      ["Orchestration and implementation approaches", "1.5 hours"],
+      ["Agentic shopping repository walkthrough", "2 hours"],
+      ["Media assistant repository walkthrough", "2 hours"],
+      ["Evaluation criteria and delivery plan", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-tec.github.io/ai-academy-103-rag/": {
+    title: "Enterprise RAG at Scale",
+    sessions: [
+      ["Enterprise RAG, CAF, and Well-Architected fit", "1.5 hours"],
+      ["Zero Trust architecture and maturity path", "1.5 hours"],
+      ["Governance, identity, and security controls", "1.5 hours"],
+      ["Network, data-access, and scaling patterns", "2 hours"],
+      ["Implementation approach and operating model", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-tec.github.io/ai-academy-101-docs-etl/": {
+    title: "Document Intelligence Approaches",
+    sessions: [
+      ["Document ETL fundamentals and readiness evidence", "1.5 hours"],
+      ["Compare invoice, layout, visual-cue, and open patterns", "1.5 hours"],
+      ["Design validation, normalization, and exception flows", "2 hours"],
+      ["Apply security, governance, and operations", "1.5 hours"],
+      ["Define pilot metrics and an adoption roadmap", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-tec.github.io/ai-academy-101-ops/": {
+    title: "Azure AI Operations",
+    sessions: [
+      ["Shared MLOps and GenAIOps operating model", "1 hour"],
+      ["Lifecycle maturity and production delivery", "1.5 hours"],
+      ["Evaluation gates, observability, and recovery", "2 hours"],
+      ["Platform delivery, FinOps, and governance", "1.5 hours"],
+      ["Workload maturity assessment and action plan", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/": {
+    title: "Microsoft Fabric Essentials Workshop",
+    sessions: [
+      ["Fabric foundations, OneLake, and workload choices", "1 hour"],
+      ["Provision workshop resources", "2 hours"],
+      ["Build Bronze, Silver, and Gold data layers", "2 hours"],
+      ["Apply AI, LLM, and AI Skills patterns", "1.5 hours"],
+      ["Use deployment pipelines and Git integration", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/": {
+    title: "Cloud Demos, Scenarios, and Tech Talks",
+    sessions: [
+      ["Azure foundations, data, and migration scenarios", "1.5 hours"],
+      ["Analytics, Fabric, and data movement scenarios", "1.5 hours"],
+      ["Azure AI, machine learning, and RAG scenarios", "1.5 hours"],
+      ["Cloud operations, protection, and application scenarios", "1.5 hours"],
+      ["Microsoft 365, Dynamics, and Power Platform scenarios", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/": {
+    title: "Fabric Enterprise Framework",
+    sessions: [
+      ["Platform foundations and workload boundaries", "1.5 hours"],
+      ["Governed workspaces, permissions, and data products", "1.5 hours"],
+      ["Source control, IaC, and deployment stages", "2 hours"],
+      ["Observability, capacity, and cost optimization", "1.5 hours"],
+      ["Enterprise operating model and rollout plan", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/": {
+    title: "AI-900 Study Guide",
+    sessions: [
+      ["AI workloads and responsible AI considerations", "1 hour"],
+      ["Machine learning principles on Azure", "1 hour"],
+      ["Computer vision workloads and services", "1 hour"],
+      ["Natural language processing workloads", "1 hour"],
+      ["Generative AI concepts and readiness review", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/": {
+    title: "AI-102 Study Guide",
+    sessions: [
+      ["Plan and manage an Azure AI solution", "1.5 hours"],
+      ["Responsible AI and content safety", "1 hour"],
+      ["Computer vision and NLP solutions", "1.5 hours"],
+      ["Knowledge mining and document intelligence", "1.5 hours"],
+      ["Generative AI solution design and review", "1.5 hours"]
+    ]
+  },
+  "https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/": {
+    title: "RAG Chatbot Implementation",
+    sessions: [
+      ["RAG solution pattern and prerequisites", "1 hour"],
+      ["Retrieval, ingestion, and AI Search design", "1.5 hours"],
+      ["Deploy the basic architecture with Terraform", "2 hours"],
+      ["Deploy Zero Trust infrastructure with azd", "2 hours"],
+      ["Evaluate, troubleshoot, and plan production changes", "2 hours"]
+    ]
+  },
+  "https://cloud2br-msftlearninghub.github.io/DP-900StudyGuide/": {
+    title: "DP-900 Study Guide",
+    sessions: [
+      ["Core data concepts and analytics workloads", "1 hour"],
+      ["Scenario review and continued study plan", "1 hour"],
+      ["Relational data services on Azure", "1 hour"],
+      ["Modern analytics workload selection", "1.5 hours"],
+      ["Non-relational data services on Azure", "1 hour"]
+    ]
+  }
+};
 
 const templates = {
   "cloud2br-tec": {
@@ -215,7 +368,8 @@ Object.values(templates).forEach((template) => {
   const topics = template.modules.split("\n").map((topic) => topic.trim()).filter(Boolean);
   template.documentType = "Repository course series";
   template.overview = `A curated set of repository-backed courses covering ${topics.join(", ")}.`;
-  template.sourceRefs = buildCourseSchedule(template.sourceRefs, template.modules, template.duration);
+  template.delivery = "Live Teams · 1–2 hours by session";
+  template.sourceRefs = buildCourseSchedule(template.sourceRefs, template.modules, template.outcomes, template.duration);
 });
 
 const form = document.querySelector("#program-form");
@@ -236,7 +390,7 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
     preparedFor: "Client organization",
     preparedBy: brand,
     overview,
-    delivery: "Live Teams · 1–2 hours daily",
+    delivery: "Live Teams · 1–2 hours by session",
     duration,
     audience,
     cohortSize: "Up to 20 learners",
@@ -250,26 +404,41 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
   };
 }
 
-function buildCourseSchedule(sources, modules, duration) {
-  const publishedCourses = sources.split("\n").map((source) => {
+function buildCourseSchedule(sources, modules, outcomes, duration) {
+  const parsedCourses = sources.split("\n").map((source) => {
     const parts = source.split("|").map((item) => item.trim());
-    const title = parts[1] || "Repository course";
-    const url = parts.length >= 4 ? parts[3] : parts[2] || "";
-    return { title, url };
+    const url = parts.at(-1) || "";
+    const catalogCourse = courseCatalog[url];
+    return {
+      title: catalogCourse?.title || parts[1] || "Repository course",
+      url,
+      sessions: catalogCourse?.sessions || []
+    };
   });
-  const topics = modules.split("\n").map((topic) => topic.trim()).filter(Boolean);
+  const publishedCourses = [...new Map(parsedCourses.map((course) => [course.url, course])).values()];
+  const fallbackTopics = [modules, outcomes].join("\n").split("\n").map((topic) => topic.trim()).filter(Boolean);
   const courseCount = duration === "Two weeks" ? 10 : 5;
+  const sessionsPerCourse = Math.floor(courseCount / publishedCourses.length);
+  const extraSessions = courseCount % publishedCourses.length;
+  const schedule = publishedCourses.flatMap((course, courseIndex) => {
+    const sessionCount = sessionsPerCourse + (courseIndex < extraSessions ? 1 : 0);
+    const materials = course.sessions.length
+      ? course.sessions
+      : fallbackTopics.length
+        ? fallbackTopics.map((topic) => [topic, "1.5 hours"])
+        : [["Define the session scope and learning goal", "1 hour"]];
+    return Array.from({ length: sessionCount }, (_, sessionIndex) => {
+      const materialIndex = sessionCount === 1
+        ? 0
+        : Math.round(sessionIndex * (materials.length - 1) / (sessionCount - 1));
+      const [focus, sessionLength] = materials[materialIndex];
+      return { ...course, focus, sessionLength };
+    });
+  });
 
-  return Array.from({ length: courseCount }, (_, index) => {
-    const sourceIndex = Math.min(
-      publishedCourses.length - 1,
-      Math.floor(index * publishedCourses.length / courseCount)
-    );
-    const source = publishedCourses[sourceIndex];
-    const topic = topics[index % topics.length] || source.title;
-    const focus = index < topics.length ? topic : `Applied practice: ${topic}`;
+  return schedule.map((session, index) => {
     const week = courseCount === 10 ? ` · Week ${index < 5 ? 1 : 2}` : "";
-    return `Day ${index + 1}${week} | ${source.title} | ${focus} | ${source.url}`;
+    return `Day ${index + 1}${week} | ${session.title} | ${session.focus} | ${session.sessionLength} | ${session.url}`;
   }).join("\n");
 }
 
@@ -317,7 +486,9 @@ function setReferences(value) {
     const [stage = "Course", title = "Repository course"] = parts;
     const hasFocus = parts.length >= 4;
     const focus = hasFocus ? parts[2] : "Guided repository course";
-    const url = hasFocus ? parts[3] : parts[2] || "";
+    const hasSessionLength = parts.length >= 5;
+    const sessionLength = hasSessionLength ? parts[3] : "1.5 hours";
+    const url = parts.at(-1) || "";
     const link = document.createElement("a");
     link.className = "path-node";
     try {
@@ -339,12 +510,15 @@ function setReferences(value) {
     courseTitle.textContent = title;
     const courseFocus = document.createElement("small");
     courseFocus.className = "path-focus";
-    courseFocus.textContent = `${focus} · Live 1–2 hours`;
+    courseFocus.textContent = focus;
+    const duration = document.createElement("small");
+    duration.className = "path-duration";
+    duration.textContent = `${sessionLength} · Live Teams`;
     const action = document.createElement("small");
     action.className = "path-action";
     action.textContent = "Open course ↗";
     link.setAttribute("aria-label", `Open ${title} repository course`);
-    copy.append(stageLabel, courseTitle, courseFocus, action);
+    copy.append(stageLabel, courseTitle, courseFocus, duration, action);
     link.append(sequence, copy);
     return link;
   }));
@@ -471,6 +645,7 @@ form.addEventListener("input", (event) => {
     form.elements.namedItem("sourceRefs").value = buildCourseSchedule(
       values.sourceRefs,
       values.modules,
+      values.outcomes,
       values.duration
     );
   }
