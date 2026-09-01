@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v10";
+const STORAGE_KEY = "cloud2br-program-pdf-v11";
 
 const courseCatalog = {
   "https://cloud2br-tec.github.io/ai-academy-101-ml/": {
@@ -361,6 +361,220 @@ Object.assign(templates, {
     outcomes: "Describe core data concepts\nCompare relational services\nCompare non-relational services\nRecognize analytics workloads\nCreate a continued study plan",
     sources: "Course 1 · Foundation | DP-900 Support Guide | https://cloud2br-msftlearninghub.github.io/DP-900StudyGuide/\nCourse 2 · Apply | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
     price: "1,650"
+  }),
+  "msft-mlops": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Azure Machine Learning and MLOps",
+    duration: "Two weeks",
+    audience: "Data scientists, ML engineers, and platform teams",
+    overview: "A repository-based path from Azure ML foundations through advanced modeling, MLOps, GenAIOps, and DP-100 study support.",
+    modules: "Azure ML foundations\nAdvanced model development\nMLOps delivery\nGenAIOps maturity\nDP-100 study support",
+    outcomes: "Navigate Azure ML components\nBuild advanced ML workflows\nDesign controlled model delivery\nAssess AI operations maturity\nPlan continued DP-100 study",
+    sources: courseSources(
+      ["Azure ML Overview", "Workspace, compute, data, and model assets", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-ML-Overview/"],
+      ["Azure ML Overview", "Azure ML lifecycle and first workflow", "2 hours", "https://cloud2br-msftlearninghub.github.io/Azure-ML-Overview/"],
+      ["Azure ML Advanced", "Advanced training and evaluation patterns", "2 hours", "https://cloud2br-msftlearninghub.github.io/Azure-ML-Advanced/"],
+      ["Azure ML Advanced", "Deployment, monitoring, and optimization", "2 hours", "https://cloud2br-msftlearninghub.github.io/Azure-ML-Advanced/"],
+      ["Azure MLOps Overview", "MLOps architecture and release controls", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-MLOps-Overview/"],
+      ["Azure MLOps Overview", "Automated delivery and model operations", "2 hours", "https://cloud2br-msftlearninghub.github.io/Azure-MLOps-Overview/"],
+      ["GenAIOps Maturity Levels", "GenAIOps capabilities and maturity stages", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/GenAIOpsMaturityLevels/"],
+      ["GenAIOps Maturity Levels", "Create an AI operations improvement roadmap", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/GenAIOpsMaturityLevels/"],
+      ["DP-100 Study Guide", "Review data science and Azure ML objectives", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/DP-100StudyGuide/"],
+      ["DP-100 Study Guide", "Scenario review and continued study plan", "1 hour", "https://cloud2br-msftlearninghub.github.io/DP-100StudyGuide/"]
+    ),
+    price: "4,800"
+  }),
+  "msft-agent-mcp": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Azure Agents and MCP Engineering",
+    duration: "Two weeks",
+    audience: "AI developers, architects, and platform engineers",
+    overview: "A multi-repository path for agent services, infrastructure, MCP hosting, Fabric data agents, and operational recommendations.",
+    modules: "Agent platform foundations\nAI agent infrastructure\nMCP hosting patterns\nFabric agent integration\nAgent operations",
+    outcomes: "Explain agent platform choices\nProvision agent infrastructure\nCompare MCP hosting options\nConnect Fabric and Copilot agents\nPlan controlled agent operations",
+    sources: courseSources(
+      ["Agent 365 Overview", "Agent 365 concepts and service landscape", "1 hour", "https://cloud2br-msftlearninghub.github.io/Agent365-Overview/"],
+      ["Agent 365 Overview", "Agent scenarios, controls, and adoption questions", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Agent365-Overview/"],
+      ["AI Agent Infrastructure Blueprint", "Azure AI Foundry and OpenAI infrastructure", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/AI-Agent-Infra-Blueprint/"],
+      ["AI Agent Infrastructure Blueprint", "Deploy and validate the public-network blueprint", "2 hours", "https://cloud2br-msftlearninghub.github.io/AI-Agent-Infra-Blueprint/"],
+      ["Azure MCP Blueprint", "MCP architecture and Azure hosting options", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-MCP-blueprint/"],
+      ["Azure MCP Blueprint", "Configure and test an MCP server", "2 hours", "https://cloud2br-msftlearninghub.github.io/Azure-MCP-blueprint/"],
+      ["Fabric MCP Agent-to-Agent", "Fabric data agents and Copilot Studio integration", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Fabric-MCP-Agent2Agent/"],
+      ["Fabric MCP Agent-to-Agent", "Implement and test agent-to-agent flow", "2 hours", "https://cloud2br-msftlearninghub.github.io/Fabric-MCP-Agent2Agent/"],
+      ["Azure Arc Recommendations Agent", "Recommendations agent architecture and data flow", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/AzureArcRecommendations-AI-Agent/"],
+      ["Azure Arc Recommendations Agent", "Run the demo and identify production changes", "2 hours", "https://cloud2br-msftlearninghub.github.io/AzureArcRecommendations-AI-Agent/"]
+    ),
+    price: "4,800"
+  }),
+  "msft-agentic-experiences": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Applied Agentic AI Experiences",
+    duration: "One week",
+    audience: "AI application developers and solution teams",
+    overview: "A five-repository survey of multimodal shopping, media, retail analytics, document summarization, and RAG experiences.",
+    modules: "Shopping assistant\nMedia assistant\nFabric retail AI\nDocument summarization\nRAG chatbot",
+    outcomes: "Compare agent experience patterns\nAssess multimodal design choices\nConnect Fabric data to AI\nPlan automated document processing\nSelect a RAG implementation path",
+    sources: courseSources(
+      ["Agentic DevOps AI Shopping", "Multimodal shopping assistant architecture", "2 hours", "https://cloud2br-msftlearninghub.github.io/Agentic-DevOps-AI-Shopping/"],
+      ["Agentic AI Media Assistant", "Multimodal media assistant workflow", "2 hours", "https://cloud2br-msftlearninghub.github.io/Agentic-AI-Media-Assistant/"],
+      ["Fabric AI Retail Demo", "Retail data foundation for AI use cases", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Fabric-AI-Retail-Demo/"],
+      ["Blob Upload Summary Tool", "File ingestion, extraction, and summary generation", "2 hours", "https://cloud2br-msftlearninghub.github.io/BlobFileUpload-SummaryTool/"],
+      ["RAG Chatbot Implementation", "RAG architecture and implementation choices", "2 hours", "https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/"]
+    ),
+    price: "2,600"
+  }),
+  "msft-security-operations": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Microsoft Security Operations",
+    duration: "One week",
+    audience: "Security engineers and cloud operations teams",
+    overview: "A five-repository path through Defender, Sentinel, Security Copilot, security campaigns, and Purview controls.",
+    modules: "Defender for Cloud\nMicrosoft Sentinel\nSecurity Copilot\nSecurity campaigns\nMicrosoft Purview",
+    outcomes: "Plan Defender onboarding\nDescribe Sentinel operations\nIdentify Security Copilot use cases\nStructure a security campaign\nConnect data governance controls",
+    sources: courseSources(
+      ["Defender Setup Overview", "Defender for Cloud setup and posture controls", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Defender-Setup-Overview/"],
+      ["Sentinel Setup Overview", "Sentinel setup, data, and detection workflow", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Sentinel-Setup-Overview/"],
+      ["Security Copilot Overview", "Security Copilot scenarios and operating considerations", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Security-Copilot-Overview/"],
+      ["Security Campaign", "Security campaign structure and engagement flow", "1 hour", "https://cloud2br-msftlearninghub.github.io/Security-Campaign/"],
+      ["Purview Setup Overview", "Purview governance, discovery, and protection setup", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Purview-Setup-Overview/"]
+    ),
+    price: "2,400"
+  }),
+  "msft-workplace-identity": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Identity and Modern Workplace Controls",
+    duration: "One week",
+    audience: "Identity, endpoint, and Microsoft 365 administrators",
+    overview: "A connected path across Entra identity, Intune endpoints, M365 licensing, Purview governance, and Defender security.",
+    modules: "Identity and access\nEndpoint management\nM365 capabilities\nInformation governance\nCloud protection",
+    outcomes: "Map identity controls\nPlan endpoint management\nCompare M365 capabilities\nIdentify governance requirements\nConnect identity and protection",
+    sources: courseSources(
+      ["Microsoft Entra Overview", "Identity, access, and tenant control concepts", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Entra-Overview/"],
+      ["Microsoft Intune Overview", "Endpoint enrollment, policy, and management", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Intune-Overview/"],
+      ["Microsoft 365 E5 and E7 Overview", "M365 security and compliance capability mapping", "1 hour", "https://cloud2br-msftlearninghub.github.io/M365-E5-E7-Overview/"],
+      ["Purview Setup Overview", "Information protection and governance setup", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Purview-Setup-Overview/"],
+      ["Defender Setup Overview", "Connect identity, endpoint, and cloud protection", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Defender-Setup-Overview/"]
+    ),
+    price: "2,300"
+  }),
+  "msft-github-devops": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "GitHub and Secure DevOps",
+    duration: "One week",
+    audience: "Developers, DevOps engineers, and repository administrators",
+    overview: "A five-repository path through GitHub foundations, certification support, advanced administration, artifact signing, and repository standards.",
+    modules: "GitHub foundations\nGH-900 study support\nGH-300 study support\nArtifact signing\nRepository automation",
+    outcomes: "Navigate GitHub workflows\nReview GitHub fundamentals\nAssess advanced GitHub practices\nPlan signed build artifacts\nStandardize repository delivery",
+    sources: courseSources(
+      ["GitHub Overview", "GitHub platform, collaboration, and workflow foundations", "1 hour", "https://cloud2br-msftlearninghub.github.io/GitHub-Overview/"],
+      ["GH-900 Study Guide", "GitHub foundations objectives and scenario review", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/GH-900StudyGuide/"],
+      ["GH-300 Study Guide", "Advanced GitHub objectives and practice review", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/GH-300StudyGuide/"],
+      ["Azure Artifact Signing DevOps", "Build and sign artifacts with managed HSM keys", "2 hours", "https://cloud2br-msftlearninghub.github.io/Azure-ArtifactSigning-DevOps/"],
+      ["Organization Repository Template", "Repository standards, checks, and automation", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/org-repo-template/"]
+    ),
+    price: "2,200"
+  }),
+  "msft-app-integration": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Azure Application and Integration Patterns",
+    duration: "One week",
+    audience: "Application developers and cloud engineers",
+    overview: "A five-repository path through Azure application services, Functions runtime behavior, automated file processing, Logic Apps integration, and Terraform.",
+    modules: "Application services\nFunction runtime\nFile processing\nLogic Apps integration\nInfrastructure as code",
+    outcomes: "Select Azure app services\nPlan Function storage behavior\nBuild a file workflow\nCompare integration approaches\nApply Terraform templates",
+    sources: courseSources(
+      ["Azure App Development Overview", "Azure application service selection and architecture", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-App-Dev-Overview/"],
+      ["Azure Functions Temporary Storage", "Function runtime files, storage, and deployment impact", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/AzureFunctionApp-TempUsage/"],
+      ["Blob Upload Summary Tool", "Build an automated upload and summary workflow", "2 hours", "https://cloud2br-msftlearninghub.github.io/BlobFileUpload-SummaryTool/"],
+      ["SAP Integration with Logic Apps", "Cookie and CSRF token integration approaches", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/SAP-integration-AzLogicApps/"],
+      ["Azure Terraform Templates", "Adapt and validate Azure infrastructure templates", "2 hours", "https://cloud2br-msftlearninghub.github.io/AzureTerraformTemplates-v0.0.0/"]
+    ),
+    price: "2,500"
+  }),
+  "msft-data-operations": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Azure Data Platform Operations",
+    duration: "One week",
+    audience: "Database, data platform, and analytics engineers",
+    overview: "A five-repository operations path for Azure databases, storage recovery, MySQL IOPS, Synapse data cleanup, and Digital Twins.",
+    modules: "Database governance\nDatabase space recovery\nMySQL performance\nSynapse transformation\nDigital Twins",
+    outcomes: "Assess database practices\nPlan safe space recovery\nExplain IOPS scaling\nBuild a Synapse cleanup flow\nIdentify Digital Twins scenarios",
+    sources: courseSources(
+      ["Azure Databases and Purview Advisor", "Database setup, modeling, tuning, and governance", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-Databases-Purview-Advisor/"],
+      ["Azure Database Space Recovery", "Analyze and free unused database space", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/azDataBase-Freeing-Unused-Space/"],
+      ["MySQL Autoscale IOPS", "Model MySQL IOPS needs and configuration", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/MySQL-autoscale-IOPS/"],
+      ["Synapse Dynamic Data Cleanup", "Create a dynamic blank-removal view", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/azSynapse-Dynamic-RemoveBlanks/"],
+      ["Azure Digital Twins Overview", "Digital Twins concepts, topology, and scenarios", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-DigitalTwins-Overview/"]
+    ),
+    price: "2,300"
+  }),
+  "msft-fabric-solutions": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Applied Microsoft Fabric Solutions",
+    duration: "One week",
+    audience: "Fabric developers, BI teams, and platform leads",
+    overview: "A five-repository applied path across Fabric foundations, retail AI, date hierarchies, capacity estimation, and enterprise operations.",
+    modules: "Fabric foundations\nRetail AI\nDate hierarchies\nCapacity estimation\nEnterprise operations",
+    outcomes: "Explain Fabric architecture\nConnect retail data to AI\nStandardize date models\nEstimate capacity needs\nPlan enterprise controls",
+    sources: courseSources(
+      ["Fabric Essentials Workshop", "Fabric, OneLake, and workload foundations", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/"],
+      ["Fabric AI Retail Demo", "Prepare retail data for AI-driven scenarios", "2 hours", "https://cloud2br-msftlearninghub.github.io/Fabric-AI-Retail-Demo/"],
+      ["Fabric Date Hierarchy Accelerator", "Automate reusable Power BI date hierarchies", "2 hours", "https://cloud2br-msftlearninghub.github.io/Fabric-Date-Hierarchy-Accelerator/"],
+      ["Fabric SKU Estimation Tool", "Estimate and validate Fabric capacity assumptions", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Fabric-SKU-EstimationTool/"],
+      ["Fabric Enterprise Framework", "Govern, deliver, observe, and optimize Fabric", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/"]
+    ),
+    price: "2,600"
+  }),
+  "msft-document-automation": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Document Automation Implementations",
+    duration: "One week",
+    audience: "Data, AI, and automation engineers",
+    overview: "A five-repository implementation path comparing managed invoice, layout, visual-cue, open-framework, and architecture-selection approaches.",
+    modules: "Managed invoice extraction\nLayout extraction\nVisual-cue routing\nOpen-framework processing\nArchitecture selection",
+    outcomes: "Build an invoice pipeline\nExtract complex layouts\nHandle multiple templates\nCompare open orchestration\nSelect an enterprise pattern",
+    sources: courseSources(
+      ["Invoice Processing with Document Intelligence", "Extract invoices and store results in Cosmos DB", "2 hours", "https://cloud2br-msftlearninghub.github.io/PDFs-Invoice-Processing-Fapp-DocIntelligence/"],
+      ["Layout Processing with Document Intelligence", "Extract tables, selections, and form text", "2 hours", "https://cloud2br-msftlearninghub.github.io/PDFs-Layouts-Processing-Fapp-DocIntelligence/"],
+      ["Multi-Layout Visual Cue Processing", "Route layouts and detect visual selections", "2 hours", "https://cloud2br-msftlearninghub.github.io/PDFs-MultiLayout-VisualCue-AzureAI-Document-Processing/"],
+      ["Invoice Processing with Open Framework", "Build an extensible invoice processing pipeline", "2 hours", "https://cloud2br-msftlearninghub.github.io/PDFs-Invoice-Processing-Fapp-OpenFramework/"],
+      ["Document Intelligence Approaches", "Compare patterns, controls, and adoption paths", "1.5 hours", "https://cloud2br-tec.github.io/ai-academy-101-docs-etl/"]
+    ),
+    price: "2,600"
+  }),
+  "msft-cloud-architecture": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Cloud Architecture and Capacity",
+    duration: "One week",
+    audience: "Cloud architects, engineers, and technical leads",
+    overview: "A five-repository path through cloud evolution, Azure capacity, infrastructure templates, architecture diagrams, and scenario validation.",
+    modules: "Cloud evolution\nAzure capacity\nTerraform foundations\nArchitecture flows\nScenario validation",
+    outcomes: "Explain cloud architecture evolution\nIdentify capacity considerations\nAdapt infrastructure templates\nCommunicate architecture flows\nValidate scenario fit",
+    sources: courseSources(
+      ["Demystifying Cloud Evolution", "Cloud history, Azure architecture, and orchestration", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Demystifying-Cloud-Evolution/"],
+      ["Azure Capacity Overview", "Capacity concepts, constraints, and planning questions", "1 hour", "https://cloud2br-msftlearninghub.github.io/Azure-Capacity-Overview/"],
+      ["Azure Terraform Templates", "Review and adapt Azure deployment templates", "2 hours", "https://cloud2br-msftlearninghub.github.io/AzureTerraformTemplates-v0.0.0/"],
+      ["Architecture Flows Designer", "Create service flows and infrastructure diagrams", "2 hours", "https://cloud2br-msftlearninghub.github.io/arch-flows-designer/"],
+      ["Cloud Demos and Scenarios", "Evaluate architecture, security, cost, and operations", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/"]
+    ),
+    price: "2,300"
+  }),
+  "msft-ai-platform": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Azure AI Platform Foundations",
+    duration: "One week",
+    audience: "AI developers and cloud platform teams",
+    overview: "A five-repository platform path through embeddings, agent infrastructure, MCP, RAG, and GenAIOps maturity.",
+    modules: "Text embeddings\nAgent infrastructure\nMCP services\nRAG applications\nGenAIOps",
+    outcomes: "Plan embedding optimization\nMap agent infrastructure\nCompare MCP hosting\nSelect a RAG pattern\nAssess operational maturity",
+    sources: courseSources(
+      ["Azure Text Embedding Overview", "Embedding models, performance, and Azure optimization", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-Text-Embedding-Overview/"],
+      ["AI Agent Infrastructure Blueprint", "Infrastructure for Azure AI Foundry agents", "2 hours", "https://cloud2br-msftlearninghub.github.io/AI-Agent-Infra-Blueprint/"],
+      ["Azure MCP Blueprint", "MCP server architecture and hosting options", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/Azure-MCP-blueprint/"],
+      ["RAG Chatbot Implementation", "Retrieval, deployment, and security choices", "2 hours", "https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/"],
+      ["GenAIOps Maturity Levels", "Evaluation, delivery, monitoring, and maturity", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/GenAIOpsMaturityLevels/"]
+    ),
+    price: "2,500"
   })
 });
 
@@ -405,6 +619,12 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
   };
 }
 
+function courseSources(...sessions) {
+  return sessions.map(([title, focus, sessionLength, url]) =>
+    `Course | ${title} | ${focus} | ${sessionLength} | ${url}`
+  ).join("\n");
+}
+
 function buildCourseSchedule(sources, modules, outcomes, duration) {
   const parsedCourses = sources.split("\n").map((source) => {
     const parts = source.split("|").map((item) => item.trim());
@@ -413,17 +633,31 @@ function buildCourseSchedule(sources, modules, outcomes, duration) {
     return {
       title: catalogCourse?.title || parts[1] || "Repository course",
       url,
+      explicitSession: parts.length >= 5 ? [parts[2], parts[3]] : null,
       sessions: catalogCourse?.sessions || []
     };
   });
-  const publishedCourses = [...new Map(parsedCourses.map((course) => [course.url, course])).values()];
+  const publishedCourses = [...parsedCourses.reduce((courses, course) => {
+    const existing = courses.get(course.url);
+    if (existing) {
+      if (course.explicitSession) existing.explicitSessions.push(course.explicitSession);
+      return courses;
+    }
+    courses.set(course.url, {
+      ...course,
+      explicitSessions: course.explicitSession ? [course.explicitSession] : []
+    });
+    return courses;
+  }, new Map()).values()];
   const fallbackTopics = [modules, outcomes].join("\n").split("\n").map((topic) => topic.trim()).filter(Boolean);
   const courseCount = duration === "Two weeks" ? 10 : 5;
   const sessionsPerCourse = Math.floor(courseCount / publishedCourses.length);
   const extraSessions = courseCount % publishedCourses.length;
   const schedule = publishedCourses.flatMap((course, courseIndex) => {
     const sessionCount = sessionsPerCourse + (courseIndex < extraSessions ? 1 : 0);
-    const materials = course.sessions.length
+    const materials = course.explicitSessions.length
+      ? course.explicitSessions
+      : course.sessions.length
       ? course.sessions
       : fallbackTopics.length
         ? fallbackTopics.map((topic) => [topic, "1.5 hours"])
@@ -496,14 +730,23 @@ function setList(id, value) {
 function setReferences(value) {
   const container = document.querySelector("#preview-source-refs");
   const steps = value.split("\n").map((item) => item.trim()).filter(Boolean).slice(0, 10);
-  container.replaceChildren(...steps.map((step, index) => {
-    const parts = step.split("|").map((item) => item.trim());
+  const parsedSteps = steps.map((step) => step.split("|").map((item) => item.trim()));
+  const courseTotals = parsedSteps.reduce((totals, parts) => {
+    const url = parts.at(-1) || "";
+    totals.set(url, (totals.get(url) || 0) + 1);
+    return totals;
+  }, new Map());
+  const courseProgress = new Map();
+  container.replaceChildren(...parsedSteps.map((parts, index) => {
     const [stage = "Course", title = "Repository course"] = parts;
     const hasFocus = parts.length >= 4;
     const focus = hasFocus ? parts[2] : "Guided repository course";
     const hasSessionLength = parts.length >= 5;
     const sessionLength = hasSessionLength ? parts[3] : "1.5 hours";
     const url = parts.at(-1) || "";
+    const moduleNumber = (courseProgress.get(url) || 0) + 1;
+    courseProgress.set(url, moduleNumber);
+    const moduleCount = courseTotals.get(url) || 1;
     const link = document.createElement("a");
     link.className = "path-node";
     try {
@@ -520,7 +763,7 @@ function setReferences(value) {
     const copy = document.createElement("span");
     copy.className = "path-copy";
     const stageLabel = document.createElement("span");
-    stageLabel.textContent = stage;
+    stageLabel.textContent = moduleCount > 1 ? `${stage} · Module ${moduleNumber} of ${moduleCount}` : `${stage} · Repository`;
     const courseTitle = document.createElement("strong");
     courseTitle.textContent = title;
     const courseFocus = document.createElement("small");
