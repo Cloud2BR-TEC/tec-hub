@@ -290,7 +290,10 @@ function setReferences(value) {
     stageLabel.textContent = stage;
     const courseTitle = document.createElement("strong");
     courseTitle.textContent = title;
-    link.append(stageLabel, courseTitle);
+    const action = document.createElement("small");
+    action.textContent = "Open course ↗";
+    link.setAttribute("aria-label", `Open ${title} course page`);
+    link.append(stageLabel, courseTitle, action);
     return link;
   }));
 }
@@ -395,6 +398,7 @@ async function generatePdf() {
         image: { type: "jpeg", quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff" },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        enableLinks: true,
         pagebreak: { mode: ["avoid-all"] }
       })
       .from(document.querySelector("#pdf-page"))
