@@ -26,7 +26,12 @@
             <p class="eyebrow">Document setup</p>
             <h1 id="editor-title">Program details</h1>
           </div>
-          <button class="button button-secondary" id="reset-button" type="button">Reset</button>
+          <div class="editor-actions">
+            <button class="button button-secondary" id="load-button" type="button">Load draft</button>
+            <button class="button button-secondary" id="save-button" type="button">Save draft</button>
+            <button class="button button-secondary" id="reset-button" type="button">Reset</button>
+            <input id="draft-file" type="file" accept="application/json,.json" hidden>
+          </div>
         </div>
 
         <form id="program-form">
@@ -38,7 +43,11 @@
                 <optgroup label="Cloud2BR-TEC">
                   <option value="cloud2br-tec">Machine Learning Complete Path</option>
                   <option value="tec-rag-builder">RAG Complete Path</option>
+                  <option value="tec-ml-101">ML Foundations Standalone</option>
+                  <option value="tec-ml-102">Applied ML Standalone</option>
                   <option value="tec-production-ml">Production ML Standalone</option>
+                  <option value="tec-rag-101">RAG Foundations Standalone</option>
+                  <option value="tec-rag-102">Build a RAG App Standalone</option>
                   <option value="tec-document-intelligence">Document Intelligence ETL</option>
                   <option value="tec-ai-operations">Azure AI Operations</option>
                 </optgroup>
@@ -46,7 +55,11 @@
                   <option value="microsoft-learning">Microsoft Fabric Learning Path</option>
                   <option value="msft-azure-ai">Azure AI and RAG Learning Path</option>
                   <option value="msft-fabric-ai">Fabric Essentials Standalone</option>
+                  <option value="msft-fabric-enterprise">Fabric Enterprise Framework</option>
+                  <option value="msft-demos">Cloud Demos and Scenarios</option>
                   <option value="msft-certification">AI-900 Support Path</option>
+                  <option value="msft-ai-102">AI-102 Support Path</option>
+                  <option value="msft-dp-900">DP-900 Support Path</option>
                 </optgroup>
               </select>
             </label>
@@ -141,7 +154,7 @@
             <p class="eyebrow">A4 preview</p>
             <h2 id="preview-title">One-page program</h2>
           </div>
-          <button class="button button-primary" id="generate-button" type="button">Generate PDF</button>
+          <button class="button button-primary" id="generate-button" type="button">Download PDF</button>
         </div>
 
         <div class="page-stage">

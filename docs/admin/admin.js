@@ -55,6 +55,28 @@ Object.assign(templates, {
     sources: "101 | RAG Foundations | https://cloud2br-tec.github.io/ai-academy-101-rag/\n102 | Build a RAG App | https://cloud2br-tec.github.io/ai-academy-102-rag/\n103 | Production RAG | https://cloud2br-tec.github.io/ai-academy-103-rag/",
     price: "6,400"
   }),
+  "tec-ml-101": program({
+    brand: "Cloud2BR-TEC",
+    title: "Machine Learning Foundations",
+    duration: "One week",
+    audience: "New data and AI practitioners",
+    overview: "A visual and practical introduction to machine learning concepts, Azure ML, data-to-endpoint lifecycle, model evaluation, deployment, and monitoring.",
+    modules: "Machine learning basics\nAzure ML overview\nWorkspace and authoring\nBuild and evaluate a first model\nDeploy, score, and monitor",
+    outcomes: "Explain core ML concepts\nNavigate an Azure ML workspace\nBuild and evaluate a model\nDescribe model deployment\nRecognize lifecycle responsibilities",
+    sources: "Standalone | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/",
+    price: "3,200"
+  }),
+  "tec-ml-102": program({
+    brand: "Cloud2BR-TEC",
+    title: "Applied Machine Learning",
+    duration: "One week",
+    audience: "Data scientists and ML developers",
+    overview: "An applied path through ML mathematics, model families, Azure ML environments, data preparation, training, metrics, explainability, and deployment.",
+    modules: "ML math and lifecycle\nData preparation and model types\nTraining and AutoML\nMetrics and explainability\nDeployment and debugging",
+    outcomes: "Frame an end-to-end ML workflow\nPrepare data for training\nCompare model approaches\nInterpret evaluation metrics\nDeploy and troubleshoot a model",
+    sources: "Standalone | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/",
+    price: "3,200"
+  }),
   "tec-production-ml": program({
     brand: "Cloud2BR-TEC",
     title: "AI Academy: Production Machine Learning",
@@ -64,6 +86,28 @@ Object.assign(templates, {
     modules: "Model development and training\nExperiment tracking and evaluation\nDeployment pipelines\nMonitoring and drift detection\nLifecycle automation and governance",
     outcomes: "Train and evaluate ML models\nDesign repeatable deployment flows\nMonitor model behavior\nAutomate lifecycle activities\nApply production governance",
     sources: "Standalone | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
+    price: "3,200"
+  }),
+  "tec-rag-101": program({
+    brand: "Cloud2BR-TEC",
+    title: "RAG Foundations",
+    duration: "One week",
+    audience: "AI developers and solution architects",
+    overview: "A practical foundation in retrieval-augmented generation, architecture options, retrieval quality, data ingestion, security, and Azure implementation considerations.",
+    modules: "RAG concepts and use cases\nRetrieval and augmentation\nBasic architecture\nZero Trust architecture\nQuality and cost considerations",
+    outcomes: "Explain a RAG workflow\nCompare architecture options\nPlan content ingestion\nIdentify security controls\nAssess quality and cost drivers",
+    sources: "Standalone | RAG Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-rag/",
+    price: "3,200"
+  }),
+  "tec-rag-102": program({
+    brand: "Cloud2BR-TEC",
+    title: "Build a Multi-Agent RAG Application",
+    duration: "One week",
+    audience: "AI application developers",
+    overview: "A build-focused course on multi-agent RAG concepts, orchestration responsibilities, implementation options, evaluation, and application delivery.",
+    modules: "Multi-agent RAG concepts\nAgent responsibilities\nOrchestration approaches\nImplementation options\nEvaluation and delivery",
+    outcomes: "Describe multi-agent RAG\nAssign agent responsibilities\nCompare build approaches\nPlan an implementation\nDefine evaluation criteria",
+    sources: "Standalone | Build RAG 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/",
     price: "3,200"
   }),
   "tec-document-intelligence": program({
@@ -110,6 +154,28 @@ Object.assign(templates, {
     sources: "Standalone | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
     price: "3,200"
   }),
+  "msft-fabric-enterprise": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Fabric Enterprise Framework",
+    duration: "One week",
+    audience: "Data platform architects and leads",
+    overview: "A structured guide to Fabric platform foundations, governance, security, versioned delivery, observability, capacity operations, and cost management.",
+    modules: "Platform foundations\nGovernance and security\nSource control and delivery\nObservability and capacity\nCost-aware operations",
+    outcomes: "Define Fabric platform boundaries\nPlan governed workspaces\nDesign controlled delivery\nEstablish operational signals\nAssess capacity and cost",
+    sources: "Standalone | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
+    price: "3,200"
+  }),
+  "msft-demos": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "Microsoft Cloud Demos and Scenarios",
+    duration: "One session",
+    audience: "Cloud and technology teams",
+    overview: "A curated live exploration of Microsoft cloud demonstrations spanning Azure, analytics, Fabric, AI, operations, Microsoft 365, Dynamics, and Power Platform.",
+    modules: "Azure foundations and data\nAnalytics and Fabric\nAzure AI and machine learning\nCloud operations and applications\nMicrosoft 365 and Power Platform",
+    outcomes: "Navigate the scenario library\nSelect relevant demonstrations\nIdentify architecture questions\nPlan a controlled proof of concept\nDefine follow-up learning",
+    sources: "Standalone | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/",
+    price: "1,200"
+  }),
   "msft-certification": program({
     brand: "Cloud2BR-MSFTLearningHub",
     title: "AI-900 Support Path",
@@ -121,13 +187,40 @@ Object.assign(templates, {
     sources: "Standalone | AI-900 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/",
     price: "2,000",
     terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
+  }),
+  "msft-ai-102": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "AI-102 Support Path",
+    duration: "One week",
+    audience: "Azure AI solution practitioners",
+    overview: "A community support path organizing solution planning, responsible AI, content moderation, vision, language, knowledge mining, and generative AI topics.",
+    modules: "Azure AI solution planning\nResponsible AI and content safety\nComputer vision and NLP\nKnowledge mining\nGenerative AI solutions",
+    outcomes: "Organize AI solution concepts\nReview responsible AI controls\nCompare AI workloads\nIdentify implementation gaps\nCreate a continued study plan",
+    sources: "Standalone | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/",
+    price: "2,400",
+    terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
+  }),
+  "msft-dp-900": program({
+    brand: "Cloud2BR-MSFTLearningHub",
+    title: "DP-900 Support Path",
+    duration: "One week",
+    audience: "Azure data fundamentals learners",
+    overview: "A community support path covering core data concepts and Azure services for relational, non-relational, analytics, and modern data workloads.",
+    modules: "Core data concepts\nRelational data on Azure\nNon-relational data on Azure\nAnalytics workloads\nGuided review and practice",
+    outcomes: "Describe core data concepts\nCompare relational services\nCompare non-relational services\nRecognize analytics workloads\nCreate a continued study plan",
+    sources: "Standalone | DP-900 Support Guide | https://cloud2br-msftlearninghub.github.io/DP-900StudyGuide/",
+    price: "2,000",
+    terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
   })
 });
 
 const form = document.querySelector("#program-form");
 const templateSelect = document.querySelector("#template");
 const generateButton = document.querySelector("#generate-button");
+const loadButton = document.querySelector("#load-button");
+const saveButton = document.querySelector("#save-button");
 const resetButton = document.querySelector("#reset-button");
+const draftFile = document.querySelector("#draft-file");
 const status = document.querySelector("#status");
 
 function program({ brand, title, duration, audience, overview, modules, outcomes, sources, price, terms }) {
@@ -185,7 +278,12 @@ function setReferences(value) {
     const [stage = "Course", title = "Open course", url = ""] = step.split("|").map((item) => item.trim());
     const link = document.createElement("a");
     link.className = "path-node";
-    link.href = url;
+    try {
+      const target = new URL(url);
+      link.href = target.protocol === "https:" ? target.href : "#";
+    } catch {
+      link.href = "#";
+    }
     link.target = "_blank";
     link.rel = "noopener";
     const stageLabel = document.createElement("span");
@@ -249,6 +347,35 @@ function fileName() {
   return `${title || "cloud2br-program"}.pdf`;
 }
 
+function downloadDraft() {
+  const draft = JSON.stringify({ version: 1, values: formValues() }, null, 2);
+  const url = URL.createObjectURL(new Blob([draft], { type: "application/json" }));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = fileName().replace(/\.pdf$/, "-draft.json");
+  link.click();
+  URL.revokeObjectURL(url);
+  status.textContent = "Draft downloaded.";
+}
+
+async function loadDraft(event) {
+  const [file] = event.target.files;
+  if (!file) return;
+
+  try {
+    const draft = JSON.parse(await file.text());
+    const values = draft?.values;
+    if (!values || !templates[values.template]) throw new Error("Unsupported draft");
+    setFormValues({ ...templates[values.template], ...values });
+    updatePreview();
+    status.textContent = "Draft loaded.";
+  } catch {
+    status.textContent = "Could not load this draft file.";
+  } finally {
+    event.target.value = "";
+  }
+}
+
 async function generatePdf() {
   if (!form.reportValidity()) return;
   generateButton.disabled = true;
@@ -283,6 +410,9 @@ async function generatePdf() {
 
 form.addEventListener("input", updatePreview);
 templateSelect.addEventListener("change", () => applyTemplate(templateSelect.value));
+loadButton.addEventListener("click", () => draftFile.click());
+saveButton.addEventListener("click", downloadDraft);
+draftFile.addEventListener("change", loadDraft);
 resetButton.addEventListener("click", () => {
   localStorage.removeItem(STORAGE_KEY);
   applyTemplate(templateSelect.value);
