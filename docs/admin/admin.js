@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v3";
+const STORAGE_KEY = "cloud2br-program-pdf-v4";
 
 const templates = {
   "cloud2br-tec": {
@@ -18,7 +18,6 @@ const templates = {
     sourceRefs: "101 | ML Foundations | https://cloud2br-tec.github.io/ai-academy-101-ml/\n102 | Applied ML | https://cloud2br-tec.github.io/ai-academy-102-ml/\n103 | Production ML | https://cloud2br-tec.github.io/ai-academy-103-ml/",
     price: "6,400",
     currency: "USD",
-    validUntil: futureDate(30),
     contact: "cloud2br@outlook.com",
     terms: "Includes live instruction, digital materials, guided labs, and completion certificates. Scheduling is confirmed after acceptance."
   },
@@ -39,9 +38,8 @@ const templates = {
     sourceRefs: "Start | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nPractice | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/\nExtend | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
     price: "5,800",
     currency: "USD",
-    validUntil: futureDate(30),
     contact: "cloud2br@outlook.com",
-    terms: "Includes instructor-led delivery and course materials. Exam vouchers, Microsoft licenses, and tenant consumption are excluded unless stated otherwise."
+    terms: "Includes live Microsoft Teams meetings, guided activities, and links to the published supporting materials. Scheduling is confirmed after acceptance."
   }
 };
 
@@ -122,7 +120,7 @@ Object.assign(templates, {
     outcomes: "Organize AI fundamentals concepts\nRelate workloads to Azure services\nReview responsible AI principles\nIdentify knowledge gaps\nPrepare a continued study plan",
     sources: "Standalone | AI-900 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/",
     price: "2,000",
-    terms: "Includes live meetings, community study materials, guided review, and practice activities. This is not an official Microsoft course or exam guarantee."
+    terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
   })
 });
 
@@ -131,12 +129,6 @@ const templateSelect = document.querySelector("#template");
 const generateButton = document.querySelector("#generate-button");
 const resetButton = document.querySelector("#reset-button");
 const status = document.querySelector("#status");
-
-function futureDate(days) {
-  const date = new Date();
-  date.setDate(date.getDate() + days);
-  return date.toISOString().slice(0, 10);
-}
 
 function program({ brand, title, duration, audience, overview, modules, outcomes, sources, price, terms }) {
   return {
@@ -156,7 +148,6 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
     sourceRefs: sources,
     price,
     currency: "USD",
-    validUntil: futureDate(30),
     contact: "cloud2br@outlook.com",
     terms: terms || "Includes live Microsoft Teams meetings, digital reference materials, guided activities, and a completion summary. Scheduling is confirmed after acceptance."
   };
@@ -206,11 +197,6 @@ function setReferences(value) {
   }));
 }
 
-function formatDate(value) {
-  if (!value) return "—";
-  return new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${value}T00:00:00Z`));
-}
-
 function updatePreview() {
   const values = formValues();
   const selectedTemplate = templates[values.template];
@@ -230,7 +216,6 @@ function updatePreview() {
   setReferences(values.sourceRefs);
   setText("preview-price", values.price);
   setText("preview-currency", values.currency);
-  setText("preview-valid-until", formatDate(values.validUntil));
   setText("preview-contact", values.contact);
   setText("preview-terms", values.terms);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(values));
