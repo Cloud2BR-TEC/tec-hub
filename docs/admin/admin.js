@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v11";
+const STORAGE_KEY = "cloud2br-program-pdf-v12";
 
 const courseCatalog = {
   "https://cloud2br-tec.github.io/ai-academy-101-ml/": {
@@ -46,8 +46,8 @@ const courseCatalog = {
     sessions: [
       ["Multi-agent RAG concepts and responsibilities", "1 hour"],
       ["Orchestration and implementation approaches", "1.5 hours"],
-      ["Agentic shopping repository walkthrough", "2 hours"],
-      ["Media assistant repository walkthrough", "2 hours"],
+      ["Agentic shopping solution walkthrough", "2 hours"],
+      ["Media assistant solution walkthrough", "2 hours"],
       ["Evaluation criteria and delivery plan", "1.5 hours"]
     ]
   },
@@ -367,7 +367,7 @@ Object.assign(templates, {
     title: "Azure Machine Learning and MLOps",
     duration: "Two weeks",
     audience: "Data scientists, ML engineers, and platform teams",
-    overview: "A repository-based path from Azure ML foundations through advanced modeling, MLOps, GenAIOps, and DP-100 study support.",
+    overview: "A progressive Azure ML program that moves from core platform skills into advanced modeling, MLOps delivery, GenAIOps maturity, and DP-100 study support.",
     modules: "Azure ML foundations\nAdvanced model development\nMLOps delivery\nGenAIOps maturity\nDP-100 study support",
     outcomes: "Navigate Azure ML components\nBuild advanced ML workflows\nDesign controlled model delivery\nAssess AI operations maturity\nPlan continued DP-100 study",
     sources: courseSources(
@@ -389,7 +389,7 @@ Object.assign(templates, {
     title: "Azure Agents and MCP Engineering",
     duration: "Two weeks",
     audience: "AI developers, architects, and platform engineers",
-    overview: "A multi-repository path for agent services, infrastructure, MCP hosting, Fabric data agents, and operational recommendations.",
+    overview: "A hands-on engineering program for agent services, secure infrastructure, MCP hosting, Fabric data agents, and production operating practices.",
     modules: "Agent platform foundations\nAI agent infrastructure\nMCP hosting patterns\nFabric agent integration\nAgent operations",
     outcomes: "Explain agent platform choices\nProvision agent infrastructure\nCompare MCP hosting options\nConnect Fabric and Copilot agents\nPlan controlled agent operations",
     sources: courseSources(
@@ -411,7 +411,7 @@ Object.assign(templates, {
     title: "Applied Agentic AI Experiences",
     duration: "One week",
     audience: "AI application developers and solution teams",
-    overview: "A five-repository survey of multimodal shopping, media, retail analytics, document summarization, and RAG experiences.",
+    overview: "An applied AI program featuring multimodal shopping, media assistants, retail analytics, document summarization, and grounded RAG experiences.",
     modules: "Shopping assistant\nMedia assistant\nFabric retail AI\nDocument summarization\nRAG chatbot",
     outcomes: "Compare agent experience patterns\nAssess multimodal design choices\nConnect Fabric data to AI\nPlan automated document processing\nSelect a RAG implementation path",
     sources: courseSources(
@@ -428,7 +428,7 @@ Object.assign(templates, {
     title: "Microsoft Security Operations",
     duration: "One week",
     audience: "Security engineers and cloud operations teams",
-    overview: "A five-repository path through Defender, Sentinel, Security Copilot, security campaigns, and Purview controls.",
+    overview: "An integrated security operations program covering Defender, Sentinel, Security Copilot, campaign planning, and Microsoft Purview controls.",
     modules: "Defender for Cloud\nMicrosoft Sentinel\nSecurity Copilot\nSecurity campaigns\nMicrosoft Purview",
     outcomes: "Plan Defender onboarding\nDescribe Sentinel operations\nIdentify Security Copilot use cases\nStructure a security campaign\nConnect data governance controls",
     sources: courseSources(
@@ -461,16 +461,16 @@ Object.assign(templates, {
     brand: "Cloud2BR-MSFTLearningHub",
     title: "GitHub and Secure DevOps",
     duration: "One week",
-    audience: "Developers, DevOps engineers, and repository administrators",
-    overview: "A five-repository path through GitHub foundations, certification support, advanced administration, artifact signing, and repository standards.",
-    modules: "GitHub foundations\nGH-900 study support\nGH-300 study support\nArtifact signing\nRepository automation",
-    outcomes: "Navigate GitHub workflows\nReview GitHub fundamentals\nAssess advanced GitHub practices\nPlan signed build artifacts\nStandardize repository delivery",
+    audience: "Developers, DevOps engineers, and GitHub administrators",
+    overview: "A secure software delivery program covering GitHub foundations, certification support, advanced administration, artifact signing, and automated delivery standards.",
+    modules: "GitHub foundations\nGH-900 study support\nGH-300 study support\nArtifact signing\nDelivery automation",
+    outcomes: "Navigate GitHub workflows\nReview GitHub fundamentals\nAssess advanced GitHub practices\nPlan signed build artifacts\nStandardize software delivery",
     sources: courseSources(
       ["GitHub Overview", "GitHub platform, collaboration, and workflow foundations", "1 hour", "https://cloud2br-msftlearninghub.github.io/GitHub-Overview/"],
       ["GH-900 Study Guide", "GitHub foundations objectives and scenario review", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/GH-900StudyGuide/"],
       ["GH-300 Study Guide", "Advanced GitHub objectives and practice review", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/GH-300StudyGuide/"],
       ["Azure Artifact Signing DevOps", "Build and sign artifacts with managed HSM keys", "2 hours", "https://cloud2br-msftlearninghub.github.io/Azure-ArtifactSigning-DevOps/"],
-      ["Organization Repository Template", "Repository standards, checks, and automation", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/org-repo-template/"]
+      ["GitHub Delivery Standards", "Delivery standards, quality checks, and automation", "1.5 hours", "https://cloud2br-msftlearninghub.github.io/org-repo-template/"]
     ),
     price: "2,200"
   }),
@@ -479,7 +479,7 @@ Object.assign(templates, {
     title: "Azure Application and Integration Patterns",
     duration: "One week",
     audience: "Application developers and cloud engineers",
-    overview: "A five-repository path through Azure application services, Functions runtime behavior, automated file processing, Logic Apps integration, and Terraform.",
+    overview: "A practical Azure application program spanning service selection, Functions runtime behavior, automated file processing, Logic Apps integration, and Terraform delivery.",
     modules: "Application services\nFunction runtime\nFile processing\nLogic Apps integration\nInfrastructure as code",
     outcomes: "Select Azure app services\nPlan Function storage behavior\nBuild a file workflow\nCompare integration approaches\nApply Terraform templates",
     sources: courseSources(
@@ -496,7 +496,7 @@ Object.assign(templates, {
     title: "Azure Data Platform Operations",
     duration: "One week",
     audience: "Database, data platform, and analytics engineers",
-    overview: "A five-repository operations path for Azure databases, storage recovery, MySQL IOPS, Synapse data cleanup, and Digital Twins.",
+    overview: "An operations-focused Azure data program covering database governance, space recovery, MySQL performance, Synapse transformation, and Digital Twins scenarios.",
     modules: "Database governance\nDatabase space recovery\nMySQL performance\nSynapse transformation\nDigital Twins",
     outcomes: "Assess database practices\nPlan safe space recovery\nExplain IOPS scaling\nBuild a Synapse cleanup flow\nIdentify Digital Twins scenarios",
     sources: courseSources(
@@ -513,7 +513,7 @@ Object.assign(templates, {
     title: "Applied Microsoft Fabric Solutions",
     duration: "One week",
     audience: "Fabric developers, BI teams, and platform leads",
-    overview: "A five-repository applied path across Fabric foundations, retail AI, date hierarchies, capacity estimation, and enterprise operations.",
+    overview: "An applied Microsoft Fabric program connecting platform foundations, retail AI, reusable date models, capacity estimation, and enterprise operations.",
     modules: "Fabric foundations\nRetail AI\nDate hierarchies\nCapacity estimation\nEnterprise operations",
     outcomes: "Explain Fabric architecture\nConnect retail data to AI\nStandardize date models\nEstimate capacity needs\nPlan enterprise controls",
     sources: courseSources(
@@ -530,7 +530,7 @@ Object.assign(templates, {
     title: "Document Automation Implementations",
     duration: "One week",
     audience: "Data, AI, and automation engineers",
-    overview: "A five-repository implementation path comparing managed invoice, layout, visual-cue, open-framework, and architecture-selection approaches.",
+    overview: "A solution-building program that compares managed invoice extraction, layout processing, visual-cue routing, open frameworks, and enterprise architecture choices.",
     modules: "Managed invoice extraction\nLayout extraction\nVisual-cue routing\nOpen-framework processing\nArchitecture selection",
     outcomes: "Build an invoice pipeline\nExtract complex layouts\nHandle multiple templates\nCompare open orchestration\nSelect an enterprise pattern",
     sources: courseSources(
@@ -547,7 +547,7 @@ Object.assign(templates, {
     title: "Cloud Architecture and Capacity",
     duration: "One week",
     audience: "Cloud architects, engineers, and technical leads",
-    overview: "A five-repository path through cloud evolution, Azure capacity, infrastructure templates, architecture diagrams, and scenario validation.",
+    overview: "A cloud architecture program that connects platform evolution, Azure capacity planning, infrastructure as code, visual design, and scenario validation.",
     modules: "Cloud evolution\nAzure capacity\nTerraform foundations\nArchitecture flows\nScenario validation",
     outcomes: "Explain cloud architecture evolution\nIdentify capacity considerations\nAdapt infrastructure templates\nCommunicate architecture flows\nValidate scenario fit",
     sources: courseSources(
@@ -564,7 +564,7 @@ Object.assign(templates, {
     title: "Azure AI Platform Foundations",
     duration: "One week",
     audience: "AI developers and cloud platform teams",
-    overview: "A five-repository platform path through embeddings, agent infrastructure, MCP, RAG, and GenAIOps maturity.",
+    overview: "An Azure AI platform program covering embedding optimization, agent infrastructure, MCP services, RAG implementation, and GenAIOps maturity.",
     modules: "Text embeddings\nAgent infrastructure\nMCP services\nRAG applications\nGenAIOps",
     outcomes: "Plan embedding optimization\nMap agent infrastructure\nCompare MCP hosting\nSelect a RAG pattern\nAssess operational maturity",
     sources: courseSources(
@@ -579,10 +579,8 @@ Object.assign(templates, {
 });
 
 Object.values(templates).forEach((template) => {
-  const topics = template.modules.split("\n").map((topic) => topic.trim()).filter(Boolean);
   template.documentType = template.brand === "Cloud2BR-TEC" ? "Training program" : "Learning program";
   template.preparedBy = "Cloud2BR";
-  template.overview = `A curated set of repository-backed courses covering ${topics.join(", ")}.`;
   template.delivery = "Live Teams · 1–2 hours by session";
   template.sourceRefs = buildCourseSchedule(template.sourceRefs, template.modules, template.outcomes, template.duration);
 });
@@ -600,7 +598,7 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
   return {
     brand,
     documentType: "Learning program",
-    kicker: brand === "Cloud2BR-TEC" ? "Technology Education Center" : "Source-based learning path",
+    kicker: brand === "Cloud2BR-TEC" ? "Technology Education Center" : "Guided technology program",
     programTitle: title,
     preparedFor: "Client organization",
     preparedBy: brand,
@@ -631,7 +629,7 @@ function buildCourseSchedule(sources, modules, outcomes, duration) {
     const url = parts.at(-1) || "";
     const catalogCourse = courseCatalog[url];
     return {
-      title: catalogCourse?.title || parts[1] || "Repository course",
+      title: catalogCourse?.title || parts[1] || "Course session",
       url,
       explicitSession: parts.length >= 5 ? [parts[2], parts[3]] : null,
       sessions: catalogCourse?.sessions || []
@@ -738,9 +736,9 @@ function setReferences(value) {
   }, new Map());
   const courseProgress = new Map();
   container.replaceChildren(...parsedSteps.map((parts, index) => {
-    const [stage = "Course", title = "Repository course"] = parts;
+    const [stage = "Course", title = "Course session"] = parts;
     const hasFocus = parts.length >= 4;
-    const focus = hasFocus ? parts[2] : "Guided repository course";
+    const focus = hasFocus ? parts[2] : "Guided course session";
     const hasSessionLength = parts.length >= 5;
     const sessionLength = hasSessionLength ? parts[3] : "1.5 hours";
     const url = parts.at(-1) || "";
@@ -763,7 +761,7 @@ function setReferences(value) {
     const copy = document.createElement("span");
     copy.className = "path-copy";
     const stageLabel = document.createElement("span");
-    stageLabel.textContent = moduleCount > 1 ? `${stage} · Module ${moduleNumber} of ${moduleCount}` : `${stage} · Repository`;
+    stageLabel.textContent = moduleCount > 1 ? `${stage} · Module ${moduleNumber} of ${moduleCount}` : `${stage} · Course`;
     const courseTitle = document.createElement("strong");
     courseTitle.textContent = title;
     const courseFocus = document.createElement("small");
@@ -775,7 +773,7 @@ function setReferences(value) {
     const action = document.createElement("small");
     action.className = "path-action";
     action.textContent = "Open course ↗";
-    link.setAttribute("aria-label", `Open ${title} repository course`);
+    link.setAttribute("aria-label", `Open course page for ${title}`);
     copy.append(stageLabel, courseTitle, courseFocus, duration, action);
     link.append(sequence, copy);
     return link;
