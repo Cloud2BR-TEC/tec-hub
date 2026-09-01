@@ -1,4 +1,4 @@
-const STORAGE_KEY = "cloud2br-program-pdf-v4";
+const STORAGE_KEY = "cloud2br-program-pdf-v5";
 
 const templates = {
   "cloud2br-tec": {
@@ -9,17 +9,17 @@ const templates = {
     preparedFor: "Client organization",
     preparedBy: "Cloud2BR-TEC",
     overview: "A complete three-stage path from machine learning foundations through model implementation to reliable production deployment, monitoring, and lifecycle management.",
-    delivery: "Live Microsoft Teams meetings",
+    delivery: "Live Teams · 1–2 hours daily",
     duration: "Two weeks",
     audience: "Data scientists and ML engineers",
     cohortSize: "Up to 20 learners",
     modules: "ML concepts and learning types\nData preparation and evaluation\nModel building and training\nDeployment and automation\nMonitoring and lifecycle operations",
     outcomes: "Explain the ML lifecycle\nPrepare data and evaluate models\nBuild and deploy a model\nPlan production monitoring\nApply governance and operations",
-    sourceRefs: "101 | ML Foundations | https://cloud2br-tec.github.io/ai-academy-101-ml/\n102 | Applied ML | https://cloud2br-tec.github.io/ai-academy-102-ml/\n103 | Production ML | https://cloud2br-tec.github.io/ai-academy-103-ml/",
-    price: "6,400",
+    sourceRefs: "Course 1 · Foundation | ML Foundations | https://cloud2br-tec.github.io/ai-academy-101-ml/\nCourse 2 · Applied | Applied ML | https://cloud2br-tec.github.io/ai-academy-102-ml/\nCourse 3 · Production | Production ML | https://cloud2br-tec.github.io/ai-academy-103-ml/",
+    price: "4,800",
     currency: "USD",
     contact: "cloud2br@outlook.com",
-    terms: "Includes live instruction, digital materials, guided labs, and completion certificates. Scheduling is confirmed after acceptance."
+    terms: "Cohort price for ten live training days at 1–2 hours per day. Includes digital materials, guided labs, and completion certificates."
   },
   "microsoft-learning": {
     brand: "Cloud2BR-MSFTLearningHub",
@@ -29,17 +29,17 @@ const templates = {
     preparedFor: "Client organization",
     preparedBy: "Cloud2BR-MSFTLearningHub",
     overview: "A guided progression from Fabric essentials and hands-on scenarios to enterprise architecture, governance, capacity, and operational considerations.",
-    delivery: "Live Microsoft Teams meetings",
+    delivery: "Live Teams · 1–2 hours daily",
     duration: "Two weeks",
     audience: "Data engineers and analytics teams",
     cohortSize: "Up to 20 learners",
     modules: "Fabric architecture and OneLake\nLakehouse and Medallion Architecture\nData engineering workflows\nPower BI workspace integration\nCapacity and cost management",
     outcomes: "Explain the Fabric platform\nOrganize lakehouse data layers\nBuild a basic data workflow\nConnect analytics experiences\nAssess capacity requirements",
-    sourceRefs: "Start | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nPractice | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/\nExtend | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
-    price: "5,800",
+    sourceRefs: "Course 1 · Foundation | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nCourse 2 · Practice | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/\nCourse 3 · Enterprise | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
+    price: "4,600",
     currency: "USD",
     contact: "cloud2br@outlook.com",
-    terms: "Includes live Microsoft Teams meetings, guided activities, and links to the published supporting materials. Scheduling is confirmed after acceptance."
+    terms: "Cohort price for ten live training days at 1–2 hours per day. Includes guided activities and published supporting materials."
   }
 };
 
@@ -52,8 +52,8 @@ Object.assign(templates, {
     overview: "A complete progression from RAG fundamentals through end-to-end application implementation to secure, scalable, evaluated production architectures.",
     modules: "Document ingestion and preparation\nIndexing and vector search\nRetrieval and prompt orchestration\nChat application integration\nEvaluation, security, and operations",
     outcomes: "Build a document ingestion flow\nCreate a searchable vector index\nImplement grounded generation\nConnect a chat experience\nPlan production controls",
-    sources: "101 | RAG Foundations | https://cloud2br-tec.github.io/ai-academy-101-rag/\n102 | Build a RAG App | https://cloud2br-tec.github.io/ai-academy-102-rag/\n103 | Production RAG | https://cloud2br-tec.github.io/ai-academy-103-rag/",
-    price: "6,400"
+    sources: "Course 1 · Foundation | RAG Foundations | https://cloud2br-tec.github.io/ai-academy-101-rag/\nCourse 2 · Build | Build a RAG App | https://cloud2br-tec.github.io/ai-academy-102-rag/\nCourse 3 · Production | Production RAG | https://cloud2br-tec.github.io/ai-academy-103-rag/",
+    price: "4,800"
   }),
   "tec-ml-101": program({
     brand: "Cloud2BR-TEC",
@@ -63,8 +63,8 @@ Object.assign(templates, {
     overview: "A visual and practical introduction to machine learning concepts, Azure ML, data-to-endpoint lifecycle, model evaluation, deployment, and monitoring.",
     modules: "Machine learning basics\nAzure ML overview\nWorkspace and authoring\nBuild and evaluate a first model\nDeploy, score, and monitor",
     outcomes: "Explain core ML concepts\nNavigate an Azure ML workspace\nBuild and evaluate a model\nDescribe model deployment\nRecognize lifecycle responsibilities",
-    sources: "Start | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/\nContinue | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/",
-    price: "3,200"
+    sources: "Course 1 · Foundation | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/\nCourse 2 · Applied | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/",
+    price: "2,200"
   }),
   "tec-ml-102": program({
     brand: "Cloud2BR-TEC",
@@ -74,8 +74,8 @@ Object.assign(templates, {
     overview: "An applied path through ML mathematics, model families, Azure ML environments, data preparation, training, metrics, explainability, and deployment.",
     modules: "ML math and lifecycle\nData preparation and model types\nTraining and AutoML\nMetrics and explainability\nDeployment and debugging",
     outcomes: "Frame an end-to-end ML workflow\nPrepare data for training\nCompare model approaches\nInterpret evaluation metrics\nDeploy and troubleshoot a model",
-    sources: "Start | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/\nContinue | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
-    price: "3,200"
+    sources: "Course 1 · Applied | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/\nCourse 2 · Production | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
+    price: "2,500"
   }),
   "tec-production-ml": program({
     brand: "Cloud2BR-TEC",
@@ -85,8 +85,8 @@ Object.assign(templates, {
     overview: "A build-to-production learning path for model development, deployment pipelines, monitoring, automation, governance, and cost-aware operations.",
     modules: "Model development and training\nExperiment tracking and evaluation\nDeployment pipelines\nMonitoring and drift detection\nLifecycle automation and governance",
     outcomes: "Train and evaluate ML models\nDesign repeatable deployment flows\nMonitor model behavior\nAutomate lifecycle activities\nApply production governance",
-    sources: "Prepare | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/\nBuild | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/\nOperate | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
-    price: "3,200"
+    sources: "Course 1 · Prepare | ML Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-ml/\nCourse 2 · Build | Applied ML 102 | https://cloud2br-tec.github.io/ai-academy-102-ml/\nCourse 3 · Operate | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
+    price: "4,500"
   }),
   "tec-rag-101": program({
     brand: "Cloud2BR-TEC",
@@ -96,8 +96,8 @@ Object.assign(templates, {
     overview: "A practical foundation in retrieval-augmented generation, architecture options, retrieval quality, data ingestion, security, and Azure implementation considerations.",
     modules: "RAG concepts and use cases\nRetrieval and augmentation\nBasic architecture\nZero Trust architecture\nQuality and cost considerations",
     outcomes: "Explain a RAG workflow\nCompare architecture options\nPlan content ingestion\nIdentify security controls\nAssess quality and cost drivers",
-    sources: "Start | RAG Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-rag/\nContinue | Build a RAG App 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/",
-    price: "3,200"
+    sources: "Course 1 · Foundation | RAG Foundations 101 | https://cloud2br-tec.github.io/ai-academy-101-rag/\nCourse 2 · Build | Build a RAG App 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/",
+    price: "2,200"
   }),
   "tec-rag-102": program({
     brand: "Cloud2BR-TEC",
@@ -107,8 +107,8 @@ Object.assign(templates, {
     overview: "A build-focused course on multi-agent RAG concepts, orchestration responsibilities, implementation options, evaluation, and application delivery.",
     modules: "Multi-agent RAG concepts\nAgent responsibilities\nOrchestration approaches\nImplementation options\nEvaluation and delivery",
     outcomes: "Describe multi-agent RAG\nAssign agent responsibilities\nCompare build approaches\nPlan an implementation\nDefine evaluation criteria",
-    sources: "Build | Build RAG 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/\nOperate | Production RAG 103 | https://cloud2br-tec.github.io/ai-academy-103-rag/",
-    price: "3,200"
+    sources: "Course 1 · Build | Build RAG 102 | https://cloud2br-tec.github.io/ai-academy-102-rag/\nCourse 2 · Operate | Production RAG 103 | https://cloud2br-tec.github.io/ai-academy-103-rag/",
+    price: "2,600"
   }),
   "tec-document-intelligence": program({
     brand: "Cloud2BR-TEC",
@@ -118,8 +118,8 @@ Object.assign(templates, {
     overview: "A hands-on document processing path covering invoice and layout extraction, Azure Document Intelligence, validation, and downstream ETL patterns.",
     modules: "Document processing architecture\nLayout and invoice extraction\nField mapping and validation\nOpen framework pipelines\nOperational ETL patterns",
     outcomes: "Select a document extraction approach\nProcess layout and invoice content\nValidate extracted fields\nConnect extraction to ETL\nPlan reliable operations",
-    sources: "Build | Docs ETL 101 | https://cloud2br-tec.github.io/ai-academy-101-docs-etl/\nOperate | AI Operations 101 | https://cloud2br-tec.github.io/ai-academy-101-ops/",
-    price: "3,200"
+    sources: "Course 1 · Build | Docs ETL 101 | https://cloud2br-tec.github.io/ai-academy-101-docs-etl/\nCourse 2 · Operate | AI Operations 101 | https://cloud2br-tec.github.io/ai-academy-101-ops/",
+    price: "2,400"
   }),
   "tec-ai-operations": program({
     brand: "Cloud2BR-TEC",
@@ -129,8 +129,8 @@ Object.assign(templates, {
     overview: "A practical introduction to GenAIOps and MLOps across evaluation, deployment, monitoring, governance, security, and continuous improvement.",
     modules: "AI application lifecycle\nEvaluation and release controls\nDeployment and monitoring\nGovernance and security\nContinuous improvement",
     outcomes: "Map the AI delivery lifecycle\nDefine evaluation gates\nPlan monitored deployments\nApply governance controls\nCreate an improvement loop",
-    sources: "Start | AI Operations 101 | https://cloud2br-tec.github.io/ai-academy-101-ops/\nApply | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
-    price: "3,200"
+    sources: "Course 1 · Operations | AI Operations 101 | https://cloud2br-tec.github.io/ai-academy-101-ops/\nCourse 2 · Apply | Production ML 103 | https://cloud2br-tec.github.io/ai-academy-103-ml/",
+    price: "2,400"
   }),
   "msft-azure-ai": program({
     brand: "Cloud2BR-MSFTLearningHub",
@@ -140,8 +140,8 @@ Object.assign(templates, {
     overview: "A solution-focused path through Azure AI capabilities, RAG chatbot architecture, model workflows, zero-trust considerations, and operational practices.",
     modules: "Azure AI services and projects\nRAG architecture and retrieval\nChatbot implementation\nZero-trust AI patterns\nEvaluation and operations",
     outcomes: "Navigate Azure AI capabilities\nDesign a RAG architecture\nBuild a chatbot workflow\nApply security boundaries\nPlan evaluation and monitoring",
-    sources: "Start | AI-900 Support | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/\nDevelop | AI-102 Support | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/\nBuild | RAG ChatBot | https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/",
-    price: "5,800"
+    sources: "Course 1 · Foundation | AI-900 Support | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/\nCourse 2 · Develop | AI-102 Support | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/\nCourse 3 · Build | RAG ChatBot | https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/",
+    price: "4,600"
   }),
   "msft-fabric-ai": program({
     brand: "Cloud2BR-MSFTLearningHub",
@@ -151,8 +151,8 @@ Object.assign(templates, {
     overview: "A concise live session exploring AI experiences in Microsoft Fabric, conversational data access, Power BI integration, and tenant-level considerations.",
     modules: "Fabric AI capabilities\nConversational data access\nAI Skills configuration\nPower BI integration\nGovernance considerations",
     outcomes: "Recognize Fabric AI scenarios\nDescribe AI Skills architecture\nConnect AI and BI experiences\nIdentify configuration needs\nPlan a governed pilot",
-    sources: "Start | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nExtend | Fabric Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
-    price: "3,200"
+    sources: "Course 1 · Foundation | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nCourse 2 · Enterprise | Fabric Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
+    price: "2,200"
   }),
   "msft-fabric-enterprise": program({
     brand: "Cloud2BR-MSFTLearningHub",
@@ -162,19 +162,19 @@ Object.assign(templates, {
     overview: "A structured guide to Fabric platform foundations, governance, security, versioned delivery, observability, capacity operations, and cost management.",
     modules: "Platform foundations\nGovernance and security\nSource control and delivery\nObservability and capacity\nCost-aware operations",
     outcomes: "Define Fabric platform boundaries\nPlan governed workspaces\nDesign controlled delivery\nEstablish operational signals\nAssess capacity and cost",
-    sources: "Prepare | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nApply | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
-    price: "3,200"
+    sources: "Course 1 · Prepare | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/\nCourse 2 · Apply | Enterprise Framework | https://cloud2br-msftlearninghub.github.io/Fabric-EnterpriseFramework/",
+    price: "2,600"
   }),
   "msft-demos": program({
     brand: "Cloud2BR-MSFTLearningHub",
     title: "Microsoft Cloud Demos and Scenarios",
-    duration: "One session",
+    duration: "One week",
     audience: "Cloud and technology teams",
-    overview: "A curated live exploration of Microsoft cloud demonstrations spanning Azure, analytics, Fabric, AI, operations, Microsoft 365, Dynamics, and Power Platform.",
+    overview: "A five-day guided exploration of Microsoft cloud demonstrations spanning Azure, analytics, Fabric, AI, operations, Microsoft 365, Dynamics, and Power Platform.",
     modules: "Azure foundations and data\nAnalytics and Fabric\nAzure AI and machine learning\nCloud operations and applications\nMicrosoft 365 and Power Platform",
     outcomes: "Navigate the scenario library\nSelect relevant demonstrations\nIdentify architecture questions\nPlan a controlled proof of concept\nDefine follow-up learning",
-    sources: "Explore | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/\nDeepen | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
-    price: "1,200"
+    sources: "Course 1 · Explore | Demos & Scenarios | https://cloud2br-msftlearninghub.github.io/DemosScenarios-TechTalks/\nCourse 2 · Deepen | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
+    price: "1,800"
   }),
   "msft-certification": program({
     brand: "Cloud2BR-MSFTLearningHub",
@@ -184,9 +184,8 @@ Object.assign(templates, {
     overview: "A community study path that organizes Azure AI concepts, practical review, and readiness checks around the AI-900 learning objectives.",
     modules: "AI workloads and considerations\nMachine learning fundamentals\nComputer vision concepts\nNatural language processing\nGenerative AI concepts and review",
     outcomes: "Organize AI fundamentals concepts\nRelate workloads to Azure services\nReview responsible AI principles\nIdentify knowledge gaps\nPrepare a continued study plan",
-    sources: "Start | AI-900 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/\nContinue | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/",
-    price: "2,000",
-    terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
+    sources: "Course 1 · Foundation | AI-900 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-900StudyGuide/\nCourse 2 · Continue | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/",
+    price: "1,650"
   }),
   "msft-ai-102": program({
     brand: "Cloud2BR-MSFTLearningHub",
@@ -196,9 +195,8 @@ Object.assign(templates, {
     overview: "A community support path organizing solution planning, responsible AI, content moderation, vision, language, knowledge mining, and generative AI topics.",
     modules: "Azure AI solution planning\nResponsible AI and content safety\nComputer vision and NLP\nKnowledge mining\nGenerative AI solutions",
     outcomes: "Organize AI solution concepts\nReview responsible AI controls\nCompare AI workloads\nIdentify implementation gaps\nCreate a continued study plan",
-    sources: "Prepare | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/\nBuild | RAG ChatBot Implementation | https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/",
-    price: "2,400",
-    terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
+    sources: "Course 1 · Prepare | AI-102 Support Guide | https://cloud2br-msftlearninghub.github.io/AI-102StudyGuide/\nCourse 2 · Build | RAG ChatBot Implementation | https://cloud2br-msftlearninghub.github.io/RAG-ChatBot-Implementation/",
+    price: "2,200"
   }),
   "msft-dp-900": program({
     brand: "Cloud2BR-MSFTLearningHub",
@@ -208,9 +206,8 @@ Object.assign(templates, {
     overview: "A community support path covering core data concepts and Azure services for relational, non-relational, analytics, and modern data workloads.",
     modules: "Core data concepts\nRelational data on Azure\nNon-relational data on Azure\nAnalytics workloads\nGuided review and practice",
     outcomes: "Describe core data concepts\nCompare relational services\nCompare non-relational services\nRecognize analytics workloads\nCreate a continued study plan",
-    sources: "Start | DP-900 Support Guide | https://cloud2br-msftlearninghub.github.io/DP-900StudyGuide/\nApply | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
-    price: "2,000",
-    terms: "Includes live Microsoft Teams meetings, community study materials, guided review, and practice activities."
+    sources: "Course 1 · Foundation | DP-900 Support Guide | https://cloud2br-msftlearninghub.github.io/DP-900StudyGuide/\nCourse 2 · Apply | Fabric Essentials | https://cloud2br-msftlearninghub.github.io/MS-Fabric-Essentials-Workshop/",
+    price: "1,650"
   })
 });
 
@@ -232,7 +229,7 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
     preparedFor: "Client organization",
     preparedBy: brand,
     overview,
-    delivery: "Live Microsoft Teams meetings",
+    delivery: "Live Teams · 1–2 hours daily",
     duration,
     audience,
     cohortSize: "Up to 20 learners",
@@ -242,7 +239,7 @@ function program({ brand, title, duration, audience, overview, modules, outcomes
     price,
     currency: "USD",
     contact: "cloud2br@outlook.com",
-    terms: terms || "Includes live Microsoft Teams meetings, digital reference materials, guided activities, and a completion summary. Scheduling is confirmed after acceptance."
+    terms: terms || `${duration === "Two weeks" ? "Ten" : "Five"} live training days at 1–2 hours per day. Cohort price includes digital materials, guided activities, and a completion summary.`
   };
 }
 
@@ -274,7 +271,7 @@ function setList(id, value) {
 function setReferences(value) {
   const container = document.querySelector("#preview-source-refs");
   const steps = value.split("\n").map((item) => item.trim()).filter(Boolean).slice(0, 3);
-  container.replaceChildren(...steps.map((step) => {
+  container.replaceChildren(...steps.map((step, index) => {
     const [stage = "Course", title = "Open course", url = ""] = step.split("|").map((item) => item.trim());
     const link = document.createElement("a");
     link.className = "path-node";
@@ -286,6 +283,11 @@ function setReferences(value) {
     }
     link.target = "_blank";
     link.rel = "noopener";
+    const sequence = document.createElement("b");
+    sequence.className = "path-step";
+    sequence.textContent = String(index + 1).padStart(2, "0");
+    const copy = document.createElement("span");
+    copy.className = "path-copy";
     const stageLabel = document.createElement("span");
     stageLabel.textContent = stage;
     const courseTitle = document.createElement("strong");
@@ -293,7 +295,8 @@ function setReferences(value) {
     const action = document.createElement("small");
     action.textContent = "Open course ↗";
     link.setAttribute("aria-label", `Open ${title} course page`);
-    link.append(stageLabel, courseTitle, action);
+    copy.append(stageLabel, courseTitle, action);
+    link.append(sequence, copy);
     return link;
   }));
 }
