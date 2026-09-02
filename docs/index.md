@@ -1,15 +1,9 @@
 <section class="hub-welcome" aria-labelledby="hub-welcome-title">
   <div class="hub-welcome__intro">
-    <img class="hub-welcome__mark" src="assets/img/org-logo.png" alt="Cloud2BR TEC" width="128" height="128">
-    <div>
-      <p class="hub-welcome__eyebrow">Cloud2BR Technology Education Center</p>
-      <h1 id="hub-welcome-title">Cloud2BR TEC Hub</h1>
-      <p class="hub-welcome__lead">Practical, self-paced learning paths for cloud, data, AI, and platform engineering.</p>
-      <div class="hub-welcome__actions">
-        <a class="hub-action hub-action--primary" href="#explore-the-catalog">Explore learning paths</a>
-        <a class="hub-action" href="#learning-progression">View progression</a>
-      </div>
-    </div>
+    <img class="hub-welcome__mark" src="assets/img/org-logo.png" alt="Cloud2BR TEC" width="72" height="72">
+    <p class="hub-welcome__eyebrow">Cloud2BR Technology Education Center</p>
+    <h1 id="hub-welcome-title">Cloud2BR TEC Hub</h1>
+    <p class="hub-welcome__lead">Learning paths and practical resources for cloud, data, AI, and platform engineering.</p>
   </div>
   <div class="hub-welcome__summary" aria-label="Learning catalog summary">
     <div><strong>4</strong><span>learning domains</span></div>
@@ -17,10 +11,6 @@
     <div><strong>101 to 103</strong><span>guided progression</span></div>
   </div>
 </section>
-
-<div class="hub-guidance">
-  <strong>Start where you are.</strong> Begin with a 101 foundation, move to 102 to build, and use 103 for production architecture, governance, and operations practices.
-</div>
 
 ## Explore the catalog
 
