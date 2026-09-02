@@ -52,9 +52,7 @@ body { background: var(--hub-canvas); }
 
 .hub-welcome { margin: 2.5rem 0 2.6rem; border-bottom: 1px solid #dce6f0; padding: 3.5rem 1rem 2.8rem; text-align: center; }
 .hub-welcome__intro { display: flex; flex-direction: column; align-items: center; }
-.hub-welcome__mark { width: 4.5rem; height: 4.5rem; margin-bottom: 0.8rem; object-fit: contain; }
-.hub-welcome__eyebrow { margin: 0 0 0.7rem; color: var(--hub-teal); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.md-content__inner.md-typeset .hub-welcome h1 { max-width: 40rem; margin: 0; border: 0; padding: 0; color: var(--hub-navy); font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.08; }
+.md-content__inner.md-typeset .hub-welcome h1 { max-width: 40rem; margin: 0; border: 0; padding: 0; color: var(--hub-navy); font-size: clamp(2.2rem, 3.3vw, 3rem); line-height: 1.08; }
 .hub-welcome__lead { max-width: 42rem; margin: 0.8rem 0 0; color: #5b7898; font-size: 1rem; line-height: 1.55; }
 .hub-welcome__summary { display: flex; justify-content: center; gap: 3.25rem; margin-top: 2rem; }
 .hub-welcome__summary div { min-width: 5rem; }
@@ -97,7 +95,6 @@ body { background: var(--hub-canvas); }
   .md-header__button.md-logo img { width: 2.2rem; height: 2.2rem; }
   .md-header__title { font-size: 0.85rem; }
   .hub-welcome { margin: 1rem 0 2rem; padding: 2.25rem 0.25rem 2rem; }
-  .hub-welcome__mark { width: 3.75rem; height: 3.75rem; }
   .hub-welcome__lead { font-size: 0.94rem; }
   .hub-welcome__summary { gap: 1rem; }
   .hub-welcome__summary div { min-width: 0; }
