@@ -1,12 +1,13 @@
 <section class="hub-welcome" aria-labelledby="hub-welcome-title">
   <div class="hub-welcome__intro">
+    <p class="hub-welcome__badge">Technology Learning Hub</p>
     <h1 id="hub-welcome-title">Cloud2BR TEC Hub</h1>
     <p class="hub-welcome__lead">Learning paths and practical resources for cloud, data, AI, and platform engineering.</p>
   </div>
   <div class="hub-welcome__summary" aria-label="Learning catalog summary">
-    <div><strong>8</strong><span>courses available</span></div>
-    <div><strong>4</strong><span>learning paths</span></div>
-    <div><strong>3</strong><span>levels to build your skills</span></div>
+    <div class="hub-stat hub-stat--blue"><strong>8</strong><span>courses available</span></div>
+    <div class="hub-stat hub-stat--teal"><strong>4</strong><span>learning paths</span></div>
+    <div class="hub-stat hub-stat--amber"><strong>3</strong><span>levels to build your skills</span></div>
   </div>
 </section>
 
