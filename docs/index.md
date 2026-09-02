@@ -2,12 +2,16 @@
   <div class="hub-welcome__intro">
     <p class="hub-welcome__badge">Technology Learning Hub</p>
     <h1 id="hub-welcome-title">Cloud2BR TEC Hub</h1>
-    <p class="hub-welcome__lead">Learning paths and practical resources for cloud, data, AI, and platform engineering.</p>
+    <p class="hub-welcome__lead">Structured learning paths and hands-on resources for cloud, data, AI, and platform engineering — guiding you from foundations to production-ready skills.</p>
+    <div class="hub-welcome__actions">
+      <a class="hub-action hub-action--primary" href="#explore-the-catalog">Explore learning paths</a>
+      <a class="hub-action" href="#learning-progression">View progression</a>
+    </div>
   </div>
   <div class="hub-welcome__summary" aria-label="Learning catalog summary">
-    <div class="hub-stat hub-stat--blue"><strong>8</strong><span>courses available</span></div>
-    <div class="hub-stat hub-stat--teal"><strong>4</strong><span>learning paths</span></div>
-    <div class="hub-stat hub-stat--amber"><strong>3</strong><span>levels to build your skills</span></div>
+    <div class="hub-stat"><strong>8</strong><span>Courses available</span></div>
+    <div class="hub-stat"><strong>4</strong><span>Learning paths</span></div>
+    <div class="hub-stat"><strong>3</strong><span>Skill levels</span></div>
   </div>
 </section>
 
