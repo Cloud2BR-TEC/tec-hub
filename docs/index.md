@@ -40,6 +40,3 @@
 <div id="learning-progression-content" aria-live="polite">
   <p>Loading available learning paths...</p>
 </div>
-
-??? info "Catalog maintenance"
-    The repository catalog and learning progression are sourced from `repos-map.yml`. Update that map when a public repository is added, renamed, retired, or receives a GitHub Pages site.
