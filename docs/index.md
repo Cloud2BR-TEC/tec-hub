@@ -1,11 +1,26 @@
-# Cloud2BR TEC Hub
+<section class="hub-welcome" aria-labelledby="hub-welcome-title">
+  <div class="hub-welcome__intro">
+    <img class="hub-welcome__mark" src="assets/img/org-logo.png" alt="Cloud2BR TEC" width="128" height="128">
+    <div>
+      <p class="hub-welcome__eyebrow">Cloud2BR Technology Education Center</p>
+      <h1 id="hub-welcome-title">Cloud2BR TEC Hub</h1>
+      <p class="hub-welcome__lead">Practical, self-paced learning paths for cloud, data, AI, and platform engineering.</p>
+      <div class="hub-welcome__actions">
+        <a class="hub-action hub-action--primary" href="#explore-the-catalog">Explore learning paths</a>
+        <a class="hub-action" href="#learning-progression">View progression</a>
+      </div>
+    </div>
+  </div>
+  <div class="hub-welcome__summary" aria-label="Learning catalog summary">
+    <div><strong>4</strong><span>learning domains</span></div>
+    <div><strong>8</strong><span>public learning paths</span></div>
+    <div><strong>101 to 103</strong><span>guided progression</span></div>
+  </div>
+</section>
 
-The Technology Education Center of Cloud2BR brings together practical, self-paced learning paths for cloud, data, AI, and platform engineering. Start with a foundation, then move into implementation and production operations.
-
-!!! important "Choose a path that matches your next outcome"
-    Start with a 101 foundation when the domain is new. Move to 102 when you are ready to build, and 103 when you need production architecture, governance, and operations practices.
-
-> **Learning principle:** Build understanding in layers: concepts first, practical implementation next, then reliable operation at scale.
+<div class="hub-guidance">
+  <strong>Start where you are.</strong> Begin with a 101 foundation, move to 102 to build, and use 103 for production architecture, governance, and operations practices.
+</div>
 
 ## Explore the catalog
 
