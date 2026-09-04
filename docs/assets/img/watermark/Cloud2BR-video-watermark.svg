@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="560"
+     height="160"
+     viewBox="0 0 560 160"
+     role="img"
+     aria-labelledby="title description">
+  <title id="title">Cloud2BR video watermark</title>
+  <desc id="description">Semi-transparent Cloud2BR logo and wordmark for video overlays.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+  </defs>
+  <image x="10"
+         y="10"
+         width="140"
+         height="140"
+         opacity="0.78"
+         xlink:href="Cloud2BR-logo.png"
+         href="Cloud2BR-logo.png" />
+  <text x="170"
+        y="103"
+        fill="#ffffff"
+        opacity="0.82"
+        filter="url(#shadow)"
+        font-family="Segoe UI, sans-serif"
+        font-size="58"
+        font-weight="300"
+        letter-spacing="0">Cloud2BR</text>
+</svg>
