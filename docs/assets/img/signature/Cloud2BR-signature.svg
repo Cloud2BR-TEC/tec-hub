@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="720"
+     height="240"
+     viewBox="0 0 720 240"
+     role="img"
+     aria-labelledby="title description">
+  <title id="title">Cloud2BR signature</title>
+  <desc id="description">Cloud2BR circular logo followed by the company name in gray.</desc>
+  <image x="10"
+         y="10"
+         width="220"
+         height="220"
+         xlink:href="Cloud2BR-logo.png"
+         href="Cloud2BR-logo.png" />
+  <text x="260"
+        y="145"
+        fill="#737373"
+        font-family="Segoe UI, sans-serif"
+        font-size="68"
+        font-weight="300"
+        letter-spacing="0">Cloud2BR</text>
+</svg>
